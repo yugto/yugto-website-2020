@@ -5,13 +5,16 @@
 				home {
 					title
 				}
+				app {
+					store
+				}
 			}
 			`
 
 	export async function preload(page, session) {
 		const { DATO_API_TOKEN } = session
-		const { home } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
-		return { data: home }
+		const { home, app } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
+		return { data: { ...home, ...app }}
 	}
 </script>
 
@@ -65,4 +68,6 @@
 	<figcaption>Have fun with Sapper!</figcaption>
 </figure>
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<p>
+	<a href={data.store} target="_blank">Visit the store</a>
+</p>
