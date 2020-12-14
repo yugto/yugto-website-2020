@@ -4,6 +4,16 @@
 			query Home {
 				about {
 					title
+					seo {
+						description
+						title
+						twitterCard
+						image {
+							width
+							height
+							url
+						}
+					}
 				}
 			}
 			`
@@ -16,12 +26,12 @@
 </script>
 
 <script>
+	import SeoHead from '../components/SeoHead/SeoHead.svelte'
+
 	export let data
 </script>
 
-<svelte:head>
-	<title>About</title>
-</svelte:head>
+<SeoHead title={ data.title } seo={ data.seo } />
 
 <h1>About this site || {data.title}</h1>
 
