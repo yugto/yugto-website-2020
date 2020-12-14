@@ -1,0 +1,38 @@
+// font-smoothing
+
+@mixin font-smoothing($light-text: true) {
+    @if $light-text == true {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin font($type: regular) {
+    @if $type == light {
+        font-family: $font-light;
+        font-weight: normal;
+        font-style: normal;
+    }
+    @if $type == regular {
+        font-family: $font-regular;
+        font-weight: normal;
+        font-style: normal;
+    }
+    @if $type == bold {
+        font-family: $font-bold;
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+// The hyphens property controls hyphenation of text in block level elements.
+// src: https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/
+@mixin hyphens {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}

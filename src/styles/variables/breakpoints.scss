@@ -1,0 +1,27 @@
+// Breakpoints
+
+$bp400: 400px;
+$bp700: 700px;
+
+// Ranges starting form a breakpoint
+$up400: (
+  min: $bp400,
+);
+$up700: (
+  min: $bp700,
+);
+
+// Ranges between breakpoints
+$range400-700: (
+  min: $bp400,
+  max: #{$bp700 - 1},
+);
+
+
+// Ranges up to a breakpoint
+$down400: (
+  max: #{$bp400 - 1},
+);
+$down700: (
+  max: #{$bp700 - 1},
+);

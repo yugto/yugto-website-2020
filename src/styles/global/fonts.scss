@@ -1,0 +1,25 @@
+// paths
+$path-to-font: '../fonts';
+
+// =============================== Geomanist
+// extra light
+@font-face {
+  font-family: 'Overpass ExtraLight';
+  src: url('#{$path-to-font}/Overpass-ExtraLight.woff2') format('woff2'), url('#{$path-to-font}/Overpass-ExtraLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+// regular
+@font-face {
+  font-family: 'Overpass Regular';
+  src: url('#{$path-to-font}/Overpass-Regular.woff2') format('woff2'), url('#{$path-to-font}/Overpass-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+// black
+@font-face {
+  font-family: 'Overpass Bold';
+  src: url('#{$path-to-font}/Overpass-Bold.woff2') format('woff2'), url('#{$path-to-font}/Overpass-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

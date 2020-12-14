@@ -1,0 +1,30 @@
+// base styling
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  //this causes you to put pixels easily in rem - 24px = 2.4rem
+  font-size: 62.5%;
+}
+// basic font-size
+body {
+  font-size: 1.8rem;
+  line-height: 1.6em;
+}
+
+html,
+body {
+  width: 100%;
+  @include font(regular);
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}

@@ -24,6 +24,39 @@ npx degit "sveltejs/sapper-template#webpack" my-app
 
 Replace `my-app` with the path where you wish to create the project.
 
+# Customized sapper with SCSS
+
+Globals, mixins and variables are stored in <code>/styles</code> and are imported into layout files and components. Means variables and mixins are everywhere available. To escape scoped styling use <code>:global()</code> declaration.
+
+Very helpful reads: 
+* [Svelte / Sapper with Sass! By Sean Schertell](https://medium.com/@sean_27490/svelte-sapper-with-sass-271fff662da9)
+* [Svelte Preprocess](https://www.npmjs.com/package/svelte-preprocess)
+
+```html
+<!-- 
+in .svelte files
+use lang attribute
+optional import of styles 
+-->
+<style lang="scss">
+    @import 'components/myComponent/myComponent.scss';
+</style>
+```
+
+```scss
+// import mixins and variables into components
+@import '../../styles/imports.scss';
+```
+
+```html
+<!-- `
+import global styles directly into
+layout files (_error.svelte, _layout.svelte) 
+-->
+<style lang="scss" global>
+	@import 'styles/global.scss';
+</style>
+```
 
 ### Using GitHub templates
 
