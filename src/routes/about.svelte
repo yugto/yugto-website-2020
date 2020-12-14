@@ -21,18 +21,16 @@
 	export async function preload(page, session) {
 		const { DATO_API_TOKEN } = session
 		const { about } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
-		return { data: about }
+		return { page: about }
 	}
 </script>
 
 <script>
 	import SeoHead from '../components/SeoHead/SeoHead.svelte'
 
-	export let data
+	export let page
 </script>
 
-<SeoHead title={ data.title } seo={ data.seo } />
+<SeoHead title={ page.title } seo={ page.seo } />
 
-<h1>About this site || {data.title}</h1>
-
-<p>This is the 'about' page. There's not much here.</p>
+<h1>{page.title}</h1>
