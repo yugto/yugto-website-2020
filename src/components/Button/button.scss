@@ -1,0 +1,39 @@
+@import '../../styles/imports.scss';
+
+.component {
+  appearance: none;
+
+  display: inline-block;
+  padding: .4em 1em .4em .7em;
+
+  font-variation-settings: 'wght' 700;
+  font-size: 2.2rem;
+  color: $color-green-dark;
+}
+
+.theme-yellow {
+  background-color: $color-yellow;
+}
+
+.theme-pink {
+  background-color: $color-pink-light;
+}
+
+.theme-green {
+  background-color: $color-green-dark;
+  color: $color-pink-light;
+}
+
+.component > :global(.icon) {
+  display: inline-block;
+  vertical-align: text-top;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: .5em;
+
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

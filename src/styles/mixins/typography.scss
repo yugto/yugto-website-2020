@@ -11,20 +11,17 @@
 }
 
 @mixin font($type: regular) {
-    @if $type == light {
-        font-family: $font-light;
-        font-weight: normal;
-        font-style: normal;
-    }
+    font-family: $font-base;
+    font-style: normal;
+
     @if $type == regular {
-        font-family: $font-regular;
-        font-weight: normal;
-        font-style: normal;
+        font-variation-settings: 'wght' 400;
     }
     @if $type == bold {
-        font-family: $font-bold;
-        font-weight: normal;
-        font-style: normal;
+        font-variation-settings: 'wght' 730;
+    }
+    @if $type == black {
+        font-variation-settings: 'wght' 800;
     }
 }
 

@@ -1,25 +1,26 @@
 // paths
 $path-to-font: '../fonts';
 
-// =============================== Geomanist
-// extra light
+// =============================== sans
 @font-face {
-  font-family: 'Overpass ExtraLight';
-  src: url('#{$path-to-font}/Overpass-ExtraLight.woff2') format('woff2'), url('#{$path-to-font}/Overpass-ExtraLight.woff') format('woff');
-  font-weight: normal;
+  font-family: "Syne";
+  src: url("#{$path-to-font}/Syne-VariableFont_wght.woff2") format("woff2-variations"),
+       url("#{$path-to-font}/Syne-Regular.woff2") format("woff2"),
+       url("#{$path-to-font}/Syne-Regular.woff") format("woff");
+  font-weight: 400 800;
+  font-display: fallback;
   font-style: normal;
+  unicode-range: U+20-7E;
 }
-// regular
+
+// =============================== serif
 @font-face {
-  font-family: 'Overpass Regular';
-  src: url('#{$path-to-font}/Overpass-Regular.woff2') format('woff2'), url('#{$path-to-font}/Overpass-Regular.woff') format('woff');
-  font-weight: normal;
+  font-family: "Piazzolla";
+  src: url("#{$path-to-font}/Piazzolla-VariableFont_opszwght.woff2") format("woff2-variations"),
+       url("#{$path-to-font}/Piazzolla-Regular.woff2") format("woff2"),
+       url("#{$path-to-font}/Piazzolla-Regular.woff") format("woff");
+  font-weight: 100 900;
+  font-display: fallback;
   font-style: normal;
-}
-// black
-@font-face {
-  font-family: 'Overpass Bold';
-  src: url('#{$path-to-font}/Overpass-Bold.woff2') format('woff2'), url('#{$path-to-font}/Overpass-Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  unicode-range: U+20-7E;
 }

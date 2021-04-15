@@ -14,8 +14,13 @@ html {
 }
 // basic font-size
 body {
-  font-size: 1.8rem;
-  line-height: 1.6em;
+  font-size: 1.7rem;
+  line-height: 1.4em;
+  color: $color-green-dark;
+
+  @media (min-width: 800px) {
+    font-size: 2rem;
+  }
 }
 
 html,
@@ -23,8 +28,32 @@ body {
   width: 100%;
   @include font(regular);
   box-sizing: border-box;
+  
+  background-color: $color-pink-light;
+}
+
+#sapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  flex-direction: column;
+}
+
+main {
+  // flex-grow: 2;
 }
 
 a {
   text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

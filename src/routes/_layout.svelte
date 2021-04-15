@@ -1,15 +1,53 @@
-<script>
-	import Navigation from '../components/Navigation/Navigation.svelte';
+<script context="module">
+	import datoRequest from '../lib/dato-request.js'
+	const query = `
+			query App {
+				app {
+					store
+					eventbrite
+					instagram
+					membershipTitle
+					membershipBody
+					membershipButton
+					membershipUrl
+					donateTitle
+					donateBody
+					donateButton
+					donateUrl
+				}
+			}
+			`
 
-	export let segment;
+	export async function preload(page, session) {
+		const { DATO_API_TOKEN } = session
+		const { app } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
+		return { app }
+	}
+</script>
+
+<script>
+	import { setContext } from 'svelte'
+	import { writable } from 'svelte/store'
+	import PreloadAssets from '../components/PreloadAssets/PreloadAssets.svelte';
+	import Header from '../components/Header/Header.svelte';
+	import Footer from '../components/Footer/Footer.svelte';
+
+	export let segment
+	export let app
+
+	let context = writable({ segment, app } );
+	setContext('context', context);
+
+	$: $context = { segment, app }
 </script>
 
 <style lang="scss" global>
 	@import 'styles/global.scss';
 </style>
 
-<Navigation {segment}/>
-
+<PreloadAssets/>
+<Header />
 <main>
 	<slot></slot>
 </main>
+<Footer />

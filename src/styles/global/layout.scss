@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  max-width: $max-width-large;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-medium {
+  max-width: $max-width-medium;
+}
+
+.container-small {
+  max-width: $max-width-small;
+}
+
+.section {
+  padding-right: $unit-small;
+  padding-left: $unit-small;
+}

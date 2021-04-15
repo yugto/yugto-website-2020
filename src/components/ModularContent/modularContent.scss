@@ -1,0 +1,14 @@
+@import '../../../styles/imports.scss'; 
+
+.component {
+  padding-top: $unit-large;
+  padding-bottom: $unit-large;
+}
+
+.component > :global( * + *) {
+  margin-top: $unit-large;
+}
+
+.component > :global( .modular-content-title + *) {
+  margin-top: $unit-small;
+}

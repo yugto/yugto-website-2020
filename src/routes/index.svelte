@@ -3,7 +3,20 @@
 	const query = `
 			query Home {
 				home {
+					pretitle
 					title
+					body
+					image {
+						format
+						responsiveImage {
+							width
+							height
+							alt
+							src
+							webpSrcSet
+        			srcSet
+						}
+					}
 					seo {
 						description
 						title
@@ -30,14 +43,20 @@
 
 <script>
 	import SeoHead from '../components/SeoHead/SeoHead.svelte'
+	import Hero from '../components/Hero/Hero.svelte'
+	import TeaserBookClub from '../components/TeaserBookClub/TeaserBookClub.svelte'
+	import Donate from '../components/Donate/Donate.svelte'
 
 	export let page
 </script>
 
 <SeoHead title={ page.title } seo={ page.seo } />
-
-<h1>{page.title}</h1>
-
-<p>
-	<a href={page.store} target="_blank">Visit the store</a>
-</p>
+<Hero 
+	pretitle={page.pretitle} 
+	title={page.title} 
+	body={page.body} 
+	image={page.image}
+	shopLink={page.store}
+/>
+<TeaserBookClub />
+<Donate />

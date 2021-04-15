@@ -5,8 +5,42 @@
 		const query = `
 			query Post {
 				post(filter: {slug: {eq: "${params.slug}"}}) {
-					title,
-					body
+					title
+					summary
+					createdAt
+					seo {
+						description
+						title
+						twitterCard
+						image {
+							url
+						}
+					}
+					content {
+						... on ParagraphRecord {
+							_modelApiKey
+							paragraph
+						}
+						... on TitleRecord {
+							_modelApiKey
+							title
+						}
+						... on ImageRecord {
+							_modelApiKey
+							caption
+							image {
+								format
+								responsiveImage {
+									alt
+									height
+									src
+									srcSet
+									webpSrcSet
+									width
+								}
+							}
+						}
+					}
 				}
 			}
 			`
@@ -17,16 +51,18 @@
 </script>
 
 <script>
-	export let post;
+	import PostHero from '../../components/PostHero/PostHero.svelte'
+	import ModularContent from '../../components/ModularContent/ModularContent.svelte'
+	export let post
+
+	const {title, summary, createdAt, updatedAt, content} = post
 </script>
 
 
 <svelte:head>
-	<title>{post.title}</title>
+	<title>{title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<PostHero {title} {summary} {createdAt} />
 
-<div class="content">
-	{@html post.body}
-</div>
+<ModularContent items={content} />

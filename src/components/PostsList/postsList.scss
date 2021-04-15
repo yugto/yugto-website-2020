@@ -1,0 +1,35 @@
+@import '../../styles/imports.scss';
+
+.items {
+  padding-top: $unit-large;
+  padding-bottom: $unit-large;
+  list-style: none;
+}
+
+.item + .item {
+  margin-top: $unit-large;
+}
+
+.link {
+  display: block;
+  padding: $unit-xsmall $unit-small $unit-small $unit-small;
+
+  border-radius: 5px;
+  color: $color-green-dark;
+  background-color: rgba($color-green-dark, 0);
+  transition: background-color .1s linear;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $color-link-background;
+  }
+}
+
+.title {
+  @include font(bold);
+}
+
+.body {
+  margin-top: $unit-xsmall;
+}

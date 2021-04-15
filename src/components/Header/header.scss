@@ -1,0 +1,22 @@
+@import '../../styles/imports.scss'; 
+
+.component {
+  background-color: $color-green-dark;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  position: relative;
+  width: $header-height-desktop;
+  height: $header-height-desktop;
+}
+
+.link img {
+  display: block;
+  width: $header-height-desktop;
+  height: $header-height-desktop;
+}
