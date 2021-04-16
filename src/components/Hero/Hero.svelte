@@ -30,7 +30,7 @@
     </div>
     <div class="media">
       <Image image={image}/>
-      <Button className="button" url={shopLink} external>Visit book store</Button>
+      <Button className="button" url={shopLink} theme="pink" external>Visit book store</Button>
     </div>
   </div>
 </article>

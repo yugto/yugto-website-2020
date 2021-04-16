@@ -15,12 +15,22 @@
     @import 'components/TeaserBookClub/teaserBookClub.scss';
 </style>
 
-<article class="component">
-  <h2>{membershipTitle}</h2>
-  {#if membershipBody}
-    <div>{@html membershipBody}</div>
-  {/if}
-  <Button url={membershipUrl} theme="yellow" external>
-    {membershipButton}
-  </Button>
+<article class="component section">
+  <div class="inner container">
+    
+    <div class="image">
+      <img src="/design/book-club.svg" alt="">
+    </div>
+    
+    <div class="content">
+      <h2 class="typo-xlarge typo-pink">{membershipTitle}</h2>
+      {#if membershipBody}
+        <div class="typo-medium typo-spaced typo-pink body">{@html membershipBody}</div>
+      {/if}
+      <Button url={membershipUrl} className="button" theme="pink" external>
+        {membershipButton}
+      </Button>
+    </div>
+
+  </div>
 </article>
