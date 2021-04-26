@@ -31,6 +31,13 @@
 				app {
 					store
 				}
+				allMemberships {
+					title
+					price
+					description
+					benefits
+					patreonLink
+				}
 			}
 			`
 
