@@ -4,6 +4,8 @@
   const { image, caption } = $$restProps
 </script>
 
-<div class="section">
-  <Image {image} {caption} className="container container-small" />
-</div>
+{#if image }
+  <div class="section">
+    <Image {image} {caption} className="container container-small" />
+  </div>
+{/if}

@@ -16,19 +16,21 @@
       <li class="container container-small item">
         <article class="card">
           <h2 class="typo-large title">
-            {#if pretitle}
-              <span class="typo-medium">{pretitle}</span>
-              <br/>
-            {/if}
-            {#if title}
-              <span class="typo-semibold">{title}</span>
-            {/if}
+            <a class="link" href="/events/{slug}" prefetch="true">
+              {#if pretitle}
+                <span class="typo-medium">{pretitle}</span>
+                <br/>
+              {/if}
+              {#if title}
+                <span class="typo-semibold">{title}</span>
+              {/if}
+            </a>
           </h2>
 
           <EventDetails startDate={startDate} className="details" />
           
           <p class="actions">
-            <Button url="events/{slug}" prefetch theme="green-muted" level="secondary">
+            <Button url="/events/{slug}" prefetch theme="green-muted" level="secondary">
               Details
             </Button>
 
