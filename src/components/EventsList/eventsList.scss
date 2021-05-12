@@ -32,6 +32,15 @@
   flex-grow: 2;
 }
 
+.link {
+  display: block;
+  color: currentColor;
+
+  &:hover span:last-child {
+    text-decoration: underline;
+  }
+}
+
 .card :global(.details) {
   margin-top: $unit-medium;
 }
