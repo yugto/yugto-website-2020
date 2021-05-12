@@ -7,9 +7,18 @@
 }
 
 .body {
+  max-width: 700px;
   margin-top: $unit-small;
+}
+
+.register {
+  margin-top: $unit-large
 }
 
 .component :global(.details) {
   margin-top: $unit-large;
+}
+
+.component .register + :global(.details) {
+  margin-top: $unit-medium;
 }
