@@ -7,6 +7,11 @@ const segments = [
     key: 'blog',
     title: 'Blog',
     prefetch: true
+  },
+  {
+    key: 'events',
+    title: 'Events',
+    prefetch: true
   }
 ]
 

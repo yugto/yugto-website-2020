@@ -1,0 +1,15 @@
+@import '../../styles/imports.scss';
+
+.component {
+  padding-top: $unit-large;
+  padding-bottom: $unit-medium;
+  background-color: $color-green-dark;
+}
+
+.body {
+  margin-top: $unit-small;
+}
+
+.component :global(.details) {
+  margin-top: $unit-large;
+}

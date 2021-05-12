@@ -1,0 +1,18 @@
+@import '../../styles/imports.scss'; 
+
+.component {
+  background-color: $color-pink-light;
+}
+
+.header {
+  text-align: center;
+}
+
+.body:not(:first-child) {
+  margin-top: $unit-medium;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}

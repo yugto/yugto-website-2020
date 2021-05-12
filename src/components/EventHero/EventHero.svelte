@@ -1,13 +1,14 @@
 <script>
   import formatDate from '../../lib/formatDate.js'
+  import EventDetails from '../EventDetails/EventDetails.svelte'
   
   export let title
   export let summary
-  export let createdAt
+  export let startDate
 </script>
 
 <style lang="scss">
-    @import 'components/PostHero/postHero.scss';
+    @import 'components/EventHero/eventHero.scss';
 </style>
 
 <header class="component section">
@@ -20,10 +21,9 @@
         {@html summary}
       </div>
     {/if}
-    <p class="typo-small date">
-      <time datetime={createdAt}>
-        {formatDate(createdAt)}
-      </time>
-    </p>
+    
+    {#if startDate}
+      <EventDetails startDate={startDate} className="details"/>
+    {/if}
   </div>
 </header>

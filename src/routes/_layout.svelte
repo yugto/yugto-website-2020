@@ -6,14 +6,18 @@
 					store
 					eventbrite
 					instagram
-					membershipTitle
-					membershipBody
-					membershipButton
-					membershipUrl
+					bookclubTitle
+					bookclubBody
+					bookclubButton
+					bookclubUrl
 					donateTitle
 					donateBody
 					donateButton
 					donateUrl
+					membershipTitle
+					membershipBody
+					eventsTitle
+					eventsBody
 				}
 			}
 			`

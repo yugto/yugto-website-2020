@@ -1,8 +1,10 @@
 <script>
 	import ArrowRight from './ArrowRight.svelte'
+	import ChevronLeft from './ChevronLeft.svelte'
 
 	const components = {
-    'arrow-right': ArrowRight
+    'arrow-right': ArrowRight,
+    'chevron-left': ChevronLeft
   };
 
   export let type

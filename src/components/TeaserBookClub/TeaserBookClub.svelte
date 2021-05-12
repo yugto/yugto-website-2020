@@ -4,10 +4,10 @@
 
   let context = getContext('context')
   const { 
-    membershipTitle,
-    membershipBody,
-    membershipButton,
-    membershipUrl 
+    bookclubTitle,
+    bookclubBody,
+    bookclubButton,
+    bookclubUrl 
   } = $context.app
 </script>
 
@@ -23,12 +23,16 @@
     </div>
     
     <div class="content">
-      <h2 class="typo-xlarge typo-pink">{membershipTitle}</h2>
-      {#if membershipBody}
-        <div class="typo-medium typo-spaced typo-pink body">{@html membershipBody}</div>
+      {#if bookclubTitle}
+        <h2 class="typo-xlarge typo-pink">{bookclubTitle}</h2>
       {/if}
-      <Button url={membershipUrl} className="button" theme="pink" external>
-        {membershipButton}
+
+      {#if bookclubBody}
+        <div class="typo-medium typo-spaced typo-pink body">{@html bookclubBody}</div>
+      {/if}
+      
+      <Button url={bookclubUrl} className="button" theme="pink" external>
+        {bookclubButton}
       </Button>
     </div>
 

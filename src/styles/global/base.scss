@@ -29,7 +29,7 @@ body {
   @include font(regular);
   box-sizing: border-box;
   
-  background-color: $color-pink-light;
+  background-color: rgba($color-pink-light, .6);
 }
 
 #sapper {

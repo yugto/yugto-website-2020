@@ -17,6 +17,9 @@
     @if $type == regular {
         font-variation-settings: 'wght' 400;
     }
+    @if $type == semibold {
+        font-variation-settings: 'wght' 570;
+    }
     @if $type == bold {
         font-variation-settings: 'wght' 730;
     }

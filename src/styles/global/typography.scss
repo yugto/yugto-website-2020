@@ -15,6 +15,7 @@
 
 .typo-large {
   font-size: 2.2rem;
+  line-height: 1.15em;
 
   @media (min-width: 800px) {
     font-size: 2.6rem;
@@ -44,6 +45,23 @@
   }
 }
 
+// ======================== weight
+.typo-regular {
+  @include font(regular);
+}
+
+.typo-semibold {
+  @include font(semibold);
+}
+
+.typo-bold {
+  @include font(bold);
+}
+
+.typo-black {
+  @include font(black);
+}
+
 // ========================== spacing
 .typo-spaced {
   letter-spacing: .03em;
@@ -54,12 +72,14 @@
   color: $color-green-dark;
 }
 
-.typo-green-muted {
-  color: rgba($color-green-dark, .5);
+.typo-muted {
+  opacity: .7;
+  @include font-smoothing(true);
 }
 
 .typo-green-light {
   color: $color-green-light;
+  @include font-smoothing(true);
 }
 
 .typo-pink {
