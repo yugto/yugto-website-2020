@@ -11,6 +11,18 @@
   margin-top: $unit-small;
 }
 
+.body :global(a) {
+  @include font(semibold);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+
+  &:hover {
+    background-size: 100% 0;
+  }
+}
+
 .register {
   margin-top: $unit-large
 }
