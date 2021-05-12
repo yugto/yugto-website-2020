@@ -6,7 +6,7 @@
 </script>
 
 <style lang="scss">
-    @import 'components/EventsList/eventsList.scss';
+  @import 'components/EventsList/eventsList.scss';
 </style>
 
 <section class="container section stack">

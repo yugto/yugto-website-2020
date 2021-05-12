@@ -1,10 +1,14 @@
 <script>
   import formatDate from '../../lib/formatDate.js'
   import EventDetails from '../EventDetails/EventDetails.svelte'
+  import Button from '../Button/Button.svelte'
   
   export let title
   export let summary
   export let startDate
+  export let registerUrl
+
+  const registerOpen = new Date(startDate) >= new Date()
 </script>
 
 <style lang="scss">
@@ -20,6 +24,12 @@
       <div class="typo-medium typo-spaced body">
         {@html summary}
       </div>
+    {/if}
+
+    {#if registerOpen && registerUrl}
+      <nav class="register">
+        <Button url={registerUrl} external>Register now</Button>
+      </nav>
     {/if}
     
     {#if startDate}

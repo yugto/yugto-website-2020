@@ -56,16 +56,18 @@
 	import EventHero from '../../components/EventHero/EventHero.svelte'
 	import SubpageNavigation from '../../components/SubpageNavigation/SubpageNavigation.svelte'
 	import ModularContent from '../../components/ModularContent/ModularContent.svelte'
+
 	export let event
 
 	const {title, startDate, endDate, summary, registerUrl, content} = event
 </script>
 
-
 <svelte:head>
 	<title>{title}</title>
 </svelte:head>
 
-<EventHero {title} {startDate} summary={summary} />
-<SubpageNavigation href="/events" label="All events"/>
-<ModularContent items={content} />
+<article>
+	<EventHero {title} {startDate} {summary} {registerUrl} />
+	<SubpageNavigation href="/events" label="All events"/>
+	<ModularContent items={content} />
+</article>
