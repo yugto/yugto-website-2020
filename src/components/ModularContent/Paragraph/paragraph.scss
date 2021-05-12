@@ -4,7 +4,7 @@
   font-family: $font-serif;
   font-size: 2.2rem;
   line-height: 1.5em;
-  font-variation-settings: "wght" 250;
+  font-variation-settings: "wght" 320;
 }
 
 .component > :global(* + *) {
@@ -13,21 +13,22 @@
 
 .component :global(strong) {
   font-weight: normal;
-  font-variation-settings: "wght" 550;
+  font-variation-settings: "wght" 700;
 }
 
 .component :global(a) {
-  text-decoration: none;
+  text-decoration: underline;
   color: $color-green-dark;
   
   background-image: linear-gradient($color-link-background, $color-link-background);
-  background-size: 100% .07em;
+  background-size: 100% 0;
   background-position: 0 95%;
   background-repeat: no-repeat;
 
   &:hover,
   &:focus {
     outline: none;
+    text-decoration: none;
     background-size: 100% 100%;
   }
 }

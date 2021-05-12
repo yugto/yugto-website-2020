@@ -1,9 +1,14 @@
-const formatDate = (string) => {
+const defaults = {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+}
+
+const formatDate = (string, options = {}) => {
   return new Intl.DateTimeFormat('en', 
     { 
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
+      ...defaults,
+      ...options
     }
   ).format(new Date(string))
 }

@@ -1,10 +1,14 @@
 <script>
   import Icon from '../Icon/Icon.svelte'
 
-  export let url
   export let theme = 'yellow'
-  export let external
-  export let className
+  export let level = 'primary'
+  export let url = null
+  export let external = false
+  export let prefetch = false
+  export let className = null
+
+  let rel = prefetch ? 'prefetch' : (external ? 'noreferrer noopener' : undefined)
 </script>
 
 <style lang="scss">
@@ -13,12 +17,14 @@
 
 {#if url}
   <a 
-    class="component theme-{theme} {className ? className : ''}" 
+    class="component theme-{theme} level-{level} {className ? className : ''}" 
     href={url}
-    rel={external ? 'noreferrer noopener' : undefined}
+    rel={rel}
     target={external ? '_blank' : undefined}
   >
-    <Icon type="arrow-right" className="icon" />
+    {#if level === 'primary'}
+      <Icon type="arrow-right" className="icon" />
+    {/if}
     <slot/>
   </a>
 {/if}

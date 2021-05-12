@@ -31,13 +31,28 @@
 				app {
 					store
 				}
+				allMemberships {
+					title
+					price
+					description
+					featuredBenefits
+					patreonLink
+				}
+				allEvents(filter: {startDate: {gte: "${new Date()}" }}, first: "2") {
+					slug
+					pretitle
+					title
+					startDate
+					endDate
+					registerUrl
+				}
 			}
 			`
 
 	export async function preload(page, session) {
 		const { DATO_API_TOKEN } = session
-		const { home, app } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
-		return { page: { ...home, ...app }}
+		const { home, app, allMemberships, allEvents: events } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
+		return { page: { ...home, ...app }, allMemberships, events }
 	}
 </script>
 
@@ -45,9 +60,13 @@
 	import SeoHead from '../components/SeoHead/SeoHead.svelte'
 	import Hero from '../components/Hero/Hero.svelte'
 	import TeaserBookClub from '../components/TeaserBookClub/TeaserBookClub.svelte'
-	import Donate from '../components/Donate/Donate.svelte'
+	import TeaserEvents from '../components/TeaserEvents/TeaserEvents.svelte'
+	// import Donate from '../components/Donate/Donate.svelte'
+	import Memberships from '../components/Memberships/Memberships.svelte'
 
 	export let page
+	export let allMemberships
+	export let events
 </script>
 
 <SeoHead title={ page.title } seo={ page.seo } />
@@ -58,5 +77,9 @@
 	image={page.image}
 	shopLink={page.store}
 />
+{#if events && events.length}
+	<TeaserEvents events={events} />
+{/if}
+<Memberships items={allMemberships}/>
 <TeaserBookClub />
-<Donate />
+<!-- <Donate /> -->

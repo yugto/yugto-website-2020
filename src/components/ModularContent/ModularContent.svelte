@@ -16,7 +16,7 @@
     @import 'components/ModularContent/modularContent.scss';
 </style>
 
-<div class="component">
+<div class="component stack">
   {#each items as item}
     {#if components[item._modelApiKey]}
       <svelte:component this={components[item._modelApiKey]} {...item} />

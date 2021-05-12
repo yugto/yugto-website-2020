@@ -1,0 +1,120 @@
+@import '../../styles/imports.scss';
+
+.component {
+  padding-top: $unit-xlarge;
+  padding-bottom: $unit-xlarge;
+  background-color: $color-green-dark;
+}
+
+.header {
+  text-align: center;
+}
+
+.intro:not(:first-child) {
+  margin-top: $unit-medium;
+}
+
+.items {
+  margin-top: $unit-large;
+  list-style: none;
+
+  @media (min-width: 1200px){
+    display: grid;
+    gap: $unit-small;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.item + .item {
+  @media (max-width: 1199px) {
+    margin-top: 3rem;
+  }
+}
+
+.membership {
+  min-height: 100%;
+  padding: $unit-medium $unit-small $unit-small $unit-small;
+  box-shadow: inset 0 0 0 1px $color-green-medium;
+  border-radius: 10px;
+
+  @media (min-width: 800px) and (max-width: 1199px){
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) 1fr;
+  }
+}
+
+.item-header {
+  text-align: center;
+}
+
+.membership-title {
+  @include font(bold);
+}
+
+.fee {
+  display: flex;
+  flex-direction: column;
+  margin-top: $unit-medium;
+}
+
+.period {
+  order: 2;
+  margin-top: -.5em;
+}
+
+.price {
+  order: 1;
+  font-variant-numeric: lining-nums;
+}
+
+.currency {
+  @include font(regular);
+}
+
+.item-header :global(.button) {
+  margin-top: $unit-small;
+}
+
+.content {
+  @media (max-width: 799px) {
+    margin-top: $unit-small;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: $unit-large;
+  }
+}
+
+.benefits {
+  &:not(:first-child) {
+    margin-top: $unit-small;
+  }
+}
+
+.benefits :global(ul) {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits :global(ul li) {
+  --checkmark-size: .3em;
+
+  display: flex;
+  gap: $unit-xsmall;
+}
+
+.benefits :global(ul li + li) {
+  margin-top: .5em;
+}
+
+.benefits :global(ul li:before) {
+  content: '';
+  display: block;
+  width: var(--checkmark-size);
+  height: var(--checkmark-size);
+  flex-shrink: 0;
+  margin-top: .55em;
+
+  background-color: currentColor;
+  border-radius: 50%;
+}

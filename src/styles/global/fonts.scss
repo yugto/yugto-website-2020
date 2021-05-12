@@ -10,7 +10,7 @@ $path-to-font: '../fonts';
   font-weight: 400 800;
   font-display: fallback;
   font-style: normal;
-  unicode-range: U+20-7E;
+  // unicode-range: U+20-7E; // todo: figure out range until euro sign
 }
 
 // =============================== serif
@@ -22,5 +22,5 @@ $path-to-font: '../fonts';
   font-weight: 100 900;
   font-display: fallback;
   font-style: normal;
-  unicode-range: U+20-7E;
+  // unicode-range: U+20-7E;
 }

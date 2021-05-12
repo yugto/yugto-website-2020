@@ -17,3 +17,12 @@
   padding-right: $unit-small;
   padding-left: $unit-small;
 }
+
+.stack {
+  padding-top: $unit-large;
+  padding-bottom: $unit-large;
+}
+
+.stack + .stack {
+  padding-top: 0;
+}

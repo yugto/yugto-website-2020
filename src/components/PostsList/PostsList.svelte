@@ -7,7 +7,7 @@
     @import 'components/PostsList/postsList.scss';
 </style>
 
-<ol class="items section">
+<ol class="items section stack">
   {#each posts as {slug, title, summary, createdAt}}
     <!-- we're using the non-standard `rel=prefetch` attribute to
         tell Sapper to load the data for the page as soon as
@@ -19,7 +19,7 @@
         href="blog/{slug}"
         class="link"
       >
-        <time class="typo-small typo-green-muted">{formatDate(createdAt)}</time>
+        <time class="typo-small typo-muted">{formatDate(createdAt)}</time>
         <h2 class="typo-large title">{title}</h2>
         {#if summary}
           <p class="body">{@html summary}</p>

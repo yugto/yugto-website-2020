@@ -1,0 +1,11 @@
+@import '../../styles/imports.scss';
+
+.component {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $unit-xsmall;
+}
+
+.date {
+  font-variant-numeric: lining-nums;
+}

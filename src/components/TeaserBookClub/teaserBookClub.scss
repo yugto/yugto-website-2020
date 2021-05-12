@@ -2,4 +2,99 @@
 
 .component {
   background-color: $color-green-light;
+
+  @media (min-width: 800px) {
+    background-image: linear-gradient($color-green-dark, $color-green-dark);
+    background-size: 100% 30px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+
+.inner {
+  display: grid;
+  
+  @media (min-width: 800px) {
+    grid-template-columns: 40% 1fr;
+    gap: $unit-medium;
+  }
+}
+
+.image {
+  position: relative;
+
+  @media (max-width: 799px) {
+    order: 2;
+  }
+}
+
+.image img {
+  @media (max-width: 799px) {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-top: -20%;
+    transform: translateX(-40%);
+  }
+
+  @media (min-width: 800px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 100%;
+  }
+}
+
+.content {
+  padding-bottom: 20%;
+
+  @media (max-width: 799px) {
+    order: 1;
+    max-width: $max-width-xsmall;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: $unit-large;
+  }
+
+  @media (min-width: 800px) {
+    padding-top: 20%;
+  }
+}
+
+.body:not(:first-child) {
+  margin-top: $unit-medium;
+}
+
+.body > :global(* + *) {
+  margin-top: 1em;
+}
+
+.body :global(ul) {
+  list-style: none;
+}
+
+.body :global(li) {
+  display: grid;
+  grid-template-columns: 1em 1fr;
+}
+
+.body :global(li + li) {
+  margin-top: .3em;
+}
+
+.body :global(li:before) {
+  content: '';
+  display: block;
+  width: .3em;
+  height: .3em;
+  margin-top: .6em;
+
+  background-color: currentColor;
+  border-radius: 50%;
+}
+
+.content :global(.button):not(:first-child) {
+  margin-top: $unit-medium;
 }
