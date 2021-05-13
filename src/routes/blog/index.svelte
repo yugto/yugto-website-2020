@@ -5,8 +5,9 @@
 				allPosts {
 					slug
 					title
-					summary
+					teaser
 					createdAt
+					publishDate
 				}
 			}
 			`
