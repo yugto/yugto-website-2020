@@ -1,30 +1,26 @@
 <script>
-  import formatDate from '../../lib/formatDate.js'
+  import PostCard from '../PostCard/PostCard.svelte'
   const {posts} = $$restProps
+
+  const selectedCount = 6
 </script>
 
 <style lang="scss">
-    @import 'components/PostsList/postsList.scss';
+  @import 'components/PostsList/postsList.scss';
 </style>
+  
+<ol class="section stack container container-xlarge featured">
+  {#each posts.slice(0, selectedCount) as post}
+    <li class="item">
+      <PostCard {post} />
+    </li>
+  {/each}
+</ol>
 
 <ol class="items section stack">
-  {#each posts as {slug, title, summary, createdAt}}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-        tell Sapper to load the data for the page as soon as
-        the user hovers over the link or taps it, instead of
-        waiting for the 'click' event -->
+  {#each posts.slice(selectedCount, -1) as post}
     <li class="container container-small item">
-      <a 
-        rel="prefetch" 
-        href="blog/{slug}"
-        class="link"
-      >
-        <time class="typo-small typo-muted">{formatDate(createdAt)}</time>
-        <h2 class="typo-large title">{title}</h2>
-        {#if summary}
-          <p class="body">{@html summary}</p>
-        {/if}
-      </a>
+      <PostCard {post} />
     </li>
 	{/each}
 </ol>

@@ -1,33 +1,49 @@
 @import '../../styles/imports.scss';
 
+.featured,
 .items {
   list-style: none;
 }
 
-.item + .item {
-  margin-top: $unit-large;
-}
+.featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $unit-small;
+  margin-top: $unit-medium;
 
-.link {
-  display: block;
-  padding: $unit-xsmall $unit-small $unit-small $unit-small;
+  @media (max-width: 799px) {
+    padding-bottom: $unit-small;
+  }
 
-  border-radius: 5px;
-  color: $color-green-dark;
-  background-color: rgba($color-green-dark, 0);
-  transition: background-color .1s linear;
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $unit-medium;
+  }
 
-  &:hover,
-  &:focus {
-    outline: none;
-    background-color: $color-link-background;
+  @media (min-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $unit-large;
   }
 }
 
-.title {
-  @include font(bold);
+.items {
+  @media (min-width: 800px) {
+    margin-top: $unit-medium;
+  }
+
+  @media (min-width: 1100px) {
+    margin-top: $unit-large;
+  }
 }
 
-.body {
-  margin-top: $unit-xsmall;
+.items .item + .item {
+  margin-top: $unit-small;
+
+  @media (min-width: 800px) {
+    margin-top: $unit-medium;
+  }
+
+  @media (min-width: 1100px) {
+    // margin-top: $unit-large;
+  }
 }
