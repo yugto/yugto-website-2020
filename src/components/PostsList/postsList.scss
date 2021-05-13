@@ -16,12 +16,12 @@
   }
 
   @media (min-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     gap: $unit-medium;
   }
 
   @media (min-width: 1100px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 33.33%);
     gap: $unit-large;
   }
 }
