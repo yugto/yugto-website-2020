@@ -1,11 +1,7 @@
 @import '../../styles/imports.scss';
 .link {
   display: block;
-
-  border-radius: 5px;
-  color: $color-green-dark;
-  background-color: rgba($color-green-dark, 0);
-  transition: background-color .1s linear;
+  text-decoration: none;
 
   &:hover .title {
     text-decoration: underline;
