@@ -2,11 +2,13 @@
 	import ImageBlock from './ImageBlock/ImageBlock.svelte'
 	import Title from './Title/Title.svelte'
 	import Paragraph from './Paragraph/Paragraph.svelte'
+	import InstagramEmbed from './InstagramEmbed/InstagramEmbed.svelte'
 
 	const components = {
-    title: Title,
-    image: ImageBlock,
-    paragraph: Paragraph
+    'title': Title,
+    'image': ImageBlock,
+    'paragraph': Paragraph,
+    'instagram_embed': InstagramEmbed
   };
 
   export let items
