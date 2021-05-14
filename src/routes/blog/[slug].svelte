@@ -8,7 +8,6 @@
 					title
 					summary
 					createdAt
-					instagramEmbed
 					seo {
 						description
 						title
@@ -40,6 +39,10 @@
 									width
 								}
 							}
+						}
+						... on InstagramEmbedRecord {
+							_modelApiKey
+							embedCode
 						}
 					}
 				}
