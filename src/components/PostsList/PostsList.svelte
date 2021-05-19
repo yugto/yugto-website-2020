@@ -1,8 +1,6 @@
 <script>
   import PostCard from '../PostCard/PostCard.svelte'
-  const {posts} = $$restProps
-
-  const selectedCount = 6
+  const {posts, featured} = $$restProps
 </script>
 
 <style lang="scss">
@@ -10,7 +8,7 @@
 </style>
   
 <ol class="section stack container container-xlarge featured">
-  {#each posts.slice(0, selectedCount) as post}
+  {#each featured as post}
     <li class="item">
       <PostCard {post} stacked />
     </li>
@@ -18,7 +16,7 @@
 </ol>
 
 <ol class="items section stack">
-  {#each posts.slice(selectedCount, -1) as post}
+  {#each posts as post}
     <li class="container container-small item">
       <PostCard {post} />
     </li>
