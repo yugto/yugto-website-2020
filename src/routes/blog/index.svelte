@@ -8,6 +8,17 @@
 					teaser
 					createdAt
 					publishDate
+					featuredImage {
+						format
+						responsiveImage {
+							alt
+							height
+							src
+							srcSet
+							webpSrcSet
+							width
+						}
+					}
 				}
 			}
 			`

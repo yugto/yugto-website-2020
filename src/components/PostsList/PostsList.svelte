@@ -12,7 +12,7 @@
 <ol class="section stack container container-xlarge featured">
   {#each posts.slice(0, selectedCount) as post}
     <li class="item">
-      <PostCard {post} />
+      <PostCard {post} stacked />
     </li>
   {/each}
 </ol>
