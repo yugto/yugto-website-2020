@@ -28,6 +28,7 @@
 						... on ImageRecord {
 							_modelApiKey
 							caption
+							align
 							image {
 								format
 								responsiveImage {
