@@ -42,6 +42,10 @@
 								}
 							}
 						}
+						... on InstagramEmbedRecord {
+							_modelApiKey
+							embedCode
+						}
 					}
 				}
 			}
