@@ -33,6 +33,10 @@
   }
 }
 
+.component :global(a[href^='https://']) {
+  @include word-wrap();
+}
+
 .component :global(ol),
 .component :global(ul) {
   list-style: none;

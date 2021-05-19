@@ -1,0 +1,38 @@
+@import '../../../styles/imports.scss';
+
+$breakpoint-align: 650px;
+
+.align-left,
+:global(.align-left) {
+  @media (min-width: $breakpoint-align) {
+    float: left;
+    margin-right: $unit-medium;
+  }
+}
+
+.align-right,
+:global(.align-right) {
+  @media (min-width: $breakpoint-align) {
+    float: right;
+    margin-left: $unit-medium;
+  }
+}
+
+.align,
+:global(.align) {
+  position: relative;
+  width: 100%;
+  
+  @media (min-width: 366px) {
+    width: 326px;
+  }
+
+  @media (max-width: $breakpoint-align - 1px) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: $breakpoint-align) {
+    margin-bottom: $unit-medium;
+  }
+}

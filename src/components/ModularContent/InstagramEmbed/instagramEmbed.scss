@@ -1,20 +1,7 @@
 @import '../../../styles/imports.scss'; 
 
 .inner {
-  position: relative;
-  width: 326px;
   box-shadow: 0 0 30px rgba(black, .15);
-
-  @media (max-width: 649px) {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  @media (min-width: 650px) {
-    float: left;
-    margin-right: $unit-medium;
-    margin-bottom: $unit-medium;
-  }
 }
 
 .inner :global(iframe) {
