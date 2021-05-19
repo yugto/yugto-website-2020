@@ -1,11 +1,53 @@
 @import '../../styles/imports.scss';
+
+@mixin rowLayout() {
+  display: grid;
+  grid-template-areas:  'date image'
+                        'title image'
+                        'body image';
+  grid-template-columns: auto 200px;
+  gap: 0 $unit-medium;
+}
+
 .link {
   display: block;
   text-decoration: none;
-
+  
   &:hover .title {
     text-decoration: underline;
   }
+}
+
+.link.has-image:not(.stacked-layout) {
+  @media (min-width: 600px) {
+    @include rowLayout();
+  }
+}
+
+.stacked-layout.has-image {
+  @media (min-width: 600px) and (max-width: 799px) {
+    @include rowLayout();
+  }
+}
+
+.link :global(figure) {
+  grid-area: image;
+
+  @media (max-width: 599px) {
+    max-width: 150px;
+  }
+}
+
+.link :global(time) {
+  grid-area: date;
+}
+
+.link :global(h2) {
+  grid-area: title;
+}
+
+.link :global(p) {
+  grid-area: body;
 }
 
 :global(.featured) .title {

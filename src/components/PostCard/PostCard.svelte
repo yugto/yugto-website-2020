@@ -1,7 +1,9 @@
 <script>
   import formatDate from '../../lib/formatDate.js'
-  const {post} = $$restProps
-  const {slug, title, teaser, createdAt, publishDate} = post
+  import Image from '../Image/Image.svelte'
+
+  const {post, stacked} = $$restProps
+  const {slug, title, teaser, createdAt, publishDate, featuredImage} = post
 </script>
 
 <style lang="scss">
@@ -12,8 +14,11 @@
   <a 
     rel="prefetch" 
     href="blog/{slug}"
-    class="link"
+    class="link{stacked ? ' stacked-layout' : ''}{featuredImage ? ' has-image' : ''}"
   >
+    {#if featuredImage}
+      <Image image={featuredImage} />
+    {/if}
     <time class="typo-small typo-muted">{formatDate(publishDate || createdAt)}</time>
     <h2 class="typo-large typo-semibold title">{title}</h2>
     {#if teaser}
