@@ -1,19 +1,12 @@
 <script context="module">
+	import { seoFragment } from '../graphql/fragments.js'
 	import datoRequest from '../lib/dato-request.js'
+	
 	const query = `
 			query Home {
 				about {
 					title
-					seo {
-						description
-						title
-						twitterCard
-						image {
-							width
-							height
-							url
-						}
-					}
+					${seoFragment}
 				}
 			}
 			`

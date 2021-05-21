@@ -1,4 +1,5 @@
 <script context="module">
+	import { seoFragment, imageFragment } from '../graphql/fragments'
 	import datoRequest from '../lib/dato-request.js'
 	const query = `
 			query Home {
@@ -6,27 +7,8 @@
 					pretitle
 					title
 					body
-					image {
-						format
-						responsiveImage {
-							width
-							height
-							alt
-							src
-							webpSrcSet
-        			srcSet
-						}
-					}
-					seo {
-						description
-						title
-						twitterCard
-						image {
-							width
-							height
-							url
-						}
-					}
+					${imageFragment}
+					${seoFragment}
 				}
 				app {
 					store
