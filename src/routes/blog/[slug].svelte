@@ -1,4 +1,6 @@
 <script context="module">
+	import { contentBlock } from '../../graphql/blocks.js'
+	import { seoFragment } from '../../graphql/fragments.js'
 	import datoRequest from '../../lib/dato-request.js'
 	
 	export async function preload({ params }, session) {
@@ -8,44 +10,8 @@
 					title
 					summary
 					createdAt
-					seo {
-						description
-						title
-						twitterCard
-						image {
-							url
-						}
-					}
-					content {
-						... on ParagraphRecord {
-							_modelApiKey
-							paragraph
-						}
-						... on TitleRecord {
-							_modelApiKey
-							title
-						}
-						... on ImageRecord {
-							_modelApiKey
-							caption
-							align
-							image {
-								format
-								responsiveImage {
-									alt
-									height
-									src
-									srcSet
-									webpSrcSet
-									width
-								}
-							}
-						}
-						... on InstagramEmbedRecord {
-							_modelApiKey
-							embedCode
-						}
-					}
+					${seoFragment}
+					${contentBlock}
 				}
 			}
 			`
@@ -56,18 +22,16 @@
 </script>
 
 <script>
+	import SeoHead from '../../components/SeoHead/SeoHead.svelte'
 	import PostHero from '../../components/PostHero/PostHero.svelte'
 	import SubpageNavigation from '../../components/SubpageNavigation/SubpageNavigation.svelte'
 	import ModularContent from '../../components/ModularContent/ModularContent.svelte'
 	export let post
 
-	const {title, summary, createdAt, updatedAt, instagramEmbed, content} = post
+	const {title, seo, summary, createdAt, updatedAt, instagramEmbed, content} = post
 </script>
 
-
-<svelte:head>
-	<title>{title}</title>
-</svelte:head>
+<SeoHead title={ title } seo={ seo } />
 
 <PostHero {title} {summary} {createdAt} />
 <SubpageNavigation href="/blog" label="All posts"/>

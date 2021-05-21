@@ -1,4 +1,6 @@
 <script context="module">
+	import { contentBlock } from '../../graphql/blocks.js'
+	import { seoFragment } from '../../graphql/fragments.js'
 	import datoRequest from '../../lib/dato-request.js'
 	
 	export async function preload({ params }, session) {
@@ -10,44 +12,8 @@
 					endDate
 					summary
 					registerUrl
-					seo {
-						description
-						title
-						twitterCard
-						image {
-							url
-						}
-					}
-					content {
-						... on ParagraphRecord {
-							_modelApiKey
-							paragraph
-						}
-						... on TitleRecord {
-							_modelApiKey
-							title
-						}
-						... on ImageRecord {
-							_modelApiKey
-							caption
-							align
-							image {
-								format
-								responsiveImage {
-									alt
-									height
-									src
-									srcSet
-									webpSrcSet
-									width
-								}
-							}
-						}
-						... on InstagramEmbedRecord {
-							_modelApiKey
-							embedCode
-						}
-					}
+					${seoFragment}
+					${contentBlock}
 				}
 			}
 			`
@@ -58,18 +24,17 @@
 </script>
 
 <script>
+	import SeoHead from '../../components/SeoHead/SeoHead.svelte'
 	import EventHero from '../../components/EventHero/EventHero.svelte'
 	import SubpageNavigation from '../../components/SubpageNavigation/SubpageNavigation.svelte'
 	import ModularContent from '../../components/ModularContent/ModularContent.svelte'
 
 	export let event
 
-	const {title, startDate, endDate, summary, registerUrl, content} = event
+	const {title, seo, startDate, endDate, summary, registerUrl, content} = event
 </script>
 
-<svelte:head>
-	<title>{title}</title>
-</svelte:head>
+<SeoHead title={ title } seo={ seo } />
 
 <article>
 	<EventHero {title} {startDate} {summary} {registerUrl} />
