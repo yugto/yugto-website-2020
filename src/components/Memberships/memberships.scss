@@ -32,14 +32,13 @@
 }
 
 .membership {
-  min-height: 100%;
   padding: $unit-medium $unit-small $unit-small $unit-small;
   box-shadow: inset 0 0 0 1px $color-green-medium;
   border-radius: 10px;
 
   @media (min-width: 800px) and (max-width: 1199px){
     display: grid;
-    grid-template-columns: minmax(200px, 250px) 1fr;
+    grid-template-columns: minmax(0, 300px) 1fr;
   }
 }
 

@@ -2,6 +2,7 @@
   import { getContext } from 'svelte'
   import isInteger from '../../lib/isInteger'
   import Button from '../Button/Button.svelte'
+  import Collapsible from '../Collapsible/Collapsible.svelte'
 
   let context = getContext('context')
   const { 
@@ -49,13 +50,15 @@
             <Button className="button" url={patreonLink} theme="pink" external>Join</Button>
           </header>
           <section class="content">
-            {#if description}
-              <div class="description">{@html description}</div>
-            {/if}
+            <Collapsible height={300}>
+              {#if description}
+                <div class="description">{@html description}</div>
+              {/if}
             
-            {#if featuredBenefits}
-              <div class="benefits typo-muted">{@html featuredBenefits}</div>
-            {/if}
+              {#if featuredBenefits}
+                <div class="benefits typo-muted">{@html featuredBenefits}</div>
+              {/if}
+            </Collapsible>
           </section>
         </article>
       </li>
