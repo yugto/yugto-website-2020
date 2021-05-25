@@ -37,7 +37,7 @@
 <SeoHead title={ title } seo={ seo } />
 
 <article>
-	<EventHero {title} {startDate} {summary} {registerUrl} />
+	<EventHero {title} {startDate} {endDate} {summary} {registerUrl} />
 	<SubpageNavigation href="/events" label="All events"/>
 	<ModularContent items={content} />
 </article>

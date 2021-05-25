@@ -11,7 +11,7 @@
   color: $color-pink-light;
   
   background-color: $color-green-light;
-  border-radius: 3px;
+  border-radius: $border-radius-small;
 
   box-shadow: 0 0 0 $color-green-light;
   transition: box-shadow .1s;

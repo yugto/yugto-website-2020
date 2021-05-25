@@ -1,0 +1,57 @@
+@import '../../styles/imports.scss';
+
+.component {
+  position: relative;
+}
+
+.button {
+  display: block;
+  min-width: 180px;
+
+  text-align: left;
+  background-color: transparent;
+  
+  &:hover .label {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+  }
+}
+
+.list {
+  list-style: none;
+
+  z-index: 2;
+  position: absolute;
+  top: calc(100% + #{$unit-xsmall});
+  left: 0;
+
+  background-color: $color-white;
+  box-shadow: 0 0 25px rgba(black, .3);
+  border-radius: $border-radius-small;
+}
+
+.item + .item {
+  border-top: 1px solid rgba($color-green-light, .3);
+}
+
+.link {
+  display: block;
+  padding: .5em 1em;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: rgba($color-green-dark, .1);
+  }
+}
+
+.backdrop {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
