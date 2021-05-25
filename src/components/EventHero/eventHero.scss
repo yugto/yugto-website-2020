@@ -23,7 +23,11 @@
   }
 }
 
-.register {
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $unit-small;
+  align-items: center;
   margin-top: $unit-large
 }
 
@@ -31,6 +35,6 @@
   margin-top: $unit-large;
 }
 
-.component .register + :global(.details) {
+.component .actions + :global(.details) {
   margin-top: $unit-medium;
 }
