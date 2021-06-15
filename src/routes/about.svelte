@@ -20,10 +20,12 @@
 
 <script>
 	import SeoHead from '../components/SeoHead/SeoHead.svelte'
+	import About from '../components/About/About.svelte'
 
 	export let page
 </script>
 
 <SeoHead title={ page.title } seo={ page.seo } />
+<About title={page.title} />
 
-<h1>{page.title}</h1>
+
