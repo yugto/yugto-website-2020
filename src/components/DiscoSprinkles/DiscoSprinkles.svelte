@@ -94,7 +94,6 @@
     @import 'components/DiscoSprinkles/discoSprinkles.scss';
 </style>
 
-
 <svg class="root {className ? className : ''}" class:isReducedMotion="{$context.reducedMotion === true}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 454.999" preserveAspectRatio="xMidYMid meet">
 
   <line bind:this={lines[0]} stroke-dasharray={lineLength} stroke-dashoffset={lineLength} class="st0" x1="188.692" y1="82.437" x2="244.988" y2="11.811"/>
