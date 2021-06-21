@@ -3,6 +3,15 @@
 .component {
   position: relative;
   background-color: $color-green-dark;
+
+  @media screen and (min-width: 800px) {
+    padding-top: $unit-large;
+    padding-bottom: $unit-large;
+  }
+
+  @media screen and (min-width: 1100px) {
+    padding-bottom: $unit-xlarge;
+  }
 }
 
 .header {

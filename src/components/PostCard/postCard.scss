@@ -19,13 +19,13 @@
 }
 
 .link.has-image:not(.stacked-layout) {
-  @media (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     @include rowLayout();
   }
 }
 
 .stacked-layout.has-image {
-  @media (min-width: 600px) and (max-width: 799px) {
+  @media screen and (min-width: 600px) and (max-width: 799px) {
     @include rowLayout();
   }
 }
@@ -33,7 +33,7 @@
 .link :global(figure) {
   grid-area: image;
 
-  @media (max-width: 599px) {
+  @media screen and (max-width: 599px) {
     max-width: 150px;
   }
 }
@@ -51,7 +51,7 @@
 }
 
 :global(.featured) .title {
-  @media (min-width: 1100px) {
+  @media screen and (min-width: 1100px) {
     font-size: 2.5rem;
   }
 }

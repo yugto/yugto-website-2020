@@ -5,20 +5,20 @@
   padding-bottom: $unit-large;
   background-color: $color-green-dark;
 
-  @media (min-width: 950px) {
+  @media screen and (min-width: 950px) {
     padding-top: $unit-xlarge;
     padding-bottom: $unit-xlarge;
   }
 }
 
 .inner {
-  @media (max-width: 949px) {
+  @media screen and (max-width: 949px) {
     > * + * {
       margin-top: $unit-medium;
     }
   }
 
-  @media (min-width: 950px) {
+  @media screen and (min-width: 950px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -41,7 +41,7 @@
 }
 
 .media > :global(*) {
-  @media (max-width: 949px) {
+  @media screen and (max-width: 949px) {
     max-width: 500px;
     margin-right: auto;
     margin-left: auto;
