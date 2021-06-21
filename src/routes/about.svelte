@@ -1,12 +1,19 @@
 <script context="module">
 	import { seoFragment } from '../graphql/fragments.js'
+	import { imageFields } from '../graphql/fields.js'
 	import datoRequest from '../lib/dato-request.js'
 	
 	const query = `
-			query Home {
+			query About {
 				about {
 					title
 					${seoFragment}
+					intro
+					images {
+						${imageFields}
+					}
+					body
+					outro
 				}
 			}
 			`
@@ -26,6 +33,6 @@
 </script>
 
 <SeoHead title={ page.title } seo={ page.seo } />
-<About title={page.title} />
+<About {...page} />
 
 

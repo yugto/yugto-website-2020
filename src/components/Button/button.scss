@@ -30,6 +30,11 @@
   background-color: $color-pink-light;
 }
 
+.theme-pink-muted {
+  background-color: rgba($color-pink-light, .2);
+  color: $color-pink-light;
+}
+
 .theme-green {
   background-color: $color-green-dark;
   color: $color-pink-light;

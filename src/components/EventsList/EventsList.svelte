@@ -3,6 +3,7 @@
   import EventDetails from '../EventDetails/EventDetails.svelte'
 
   export let events
+  export let theme = 'light'
 </script>
 
 <style lang="scss">
@@ -13,7 +14,7 @@
   <slot />
   <ol class="items">
     {#each events as {slug, pretitle, title, startDate, endDate, registerUrl}}
-      <li class="container container-small item">
+      <li class="container container-small item theme-{theme}">
         <article class="card">
           <h2 class="typo-large title">
             <a class="link" href="/events/{slug}" prefetch="true">
@@ -30,13 +31,23 @@
           <EventDetails startDate={startDate} className="details" />
           
           <p class="actions">
-            <Button url="/events/{slug}" prefetch theme="green-muted" level="secondary">
+            <Button 
+              url="/events/{slug}" 
+              prefetch 
+              theme="{theme === 'light' ? 'green-muted' : 'pink-muted'}" 
+              level="secondary"
+            >
               Details
             </Button>
 
             <!-- registerUrl only on 'queryFuture' -->
             {#if registerUrl}
-              <Button url="{registerUrl}" theme="green" external level="secondary">
+              <Button 
+                url="{registerUrl}" 
+                theme="{theme === 'light' ? 'green' : 'pink'}" 
+                external 
+                level="secondary"
+              >
                 Register
               </Button>
             {/if}

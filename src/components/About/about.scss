@@ -1,1 +1,130 @@
 @import '../../styles/imports.scss';
+
+.header {
+  padding-top: $unit-large;
+  padding-bottom: $unit-large;
+
+  @media (min-width: 950px) {
+    padding-top: $unit-xlarge;
+    padding-bottom: $unit-xlarge;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.emphasize {
+  font-size: 1.15em;
+  line-height: 1.5;
+  text-align: center;
+
+  @media (min-width: 800px) {
+    font-size: 1.3em;
+  }
+}
+
+.images {
+  z-index: 1;
+  position: relative;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  padding-top: $unit-xlarge;
+  padding-bottom: $unit-large;
+
+  @media (min-width: 950px) {
+    padding-bottom: $unit-xlarge;
+  }
+}
+
+.grid :global(.image:nth-child(1)),
+.grid :global(.image:nth-child(3)) {
+  position: absolute;
+  z-index: 2;
+
+  box-shadow: 0 0 35px rgba(black, .3);
+}
+
+.grid :global(.image:nth-child(1)) {
+  right: 65%;
+  bottom: 5%;
+  width: 30%;
+  height: auto;
+}
+
+.grid :global(.image:nth-child(2)) {
+  z-index: 1;
+  position: relative;
+  width: 70%;
+  max-width: 440px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 450px) {
+    width: 50%;
+  }
+}
+
+.grid :global(.image:nth-child(3)) {
+  top: 8%;
+  right: $unit-small;
+  width: 45%;
+  max-width: 170px;
+  height: auto;
+
+  @media (min-width: 600px) {
+    width: 30%;
+    max-width: none;
+  }
+
+  @media (min-width: 1100px) {
+    top: 25%;
+    width: 25%;
+  }
+
+  @media (min-width: 1200px) {
+    right: 0;
+    width: 28%;
+  }
+}
+
+.images :global(.sprinkles) {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.body {
+  position: relative;
+  padding-top: $unit-large;
+  text-align: center;
+}
+
+.body::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  margin: $unit-large auto;
+
+  background-color: $color-green-light;
+
+  @media (min-width: 800px) {
+    margin: $unit-xlarge auto;
+  }
+}
+
+.outro {
+  margin-bottom: $unit-large;
+
+  @media (min-width: 800px) {
+    margin-bottom: $unit-xlarge;
+  }
+}

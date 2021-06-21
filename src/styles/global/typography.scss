@@ -86,3 +86,12 @@
   color: $color-pink-light;
   @include font-smoothing(true);
 }
+
+// ========================== type
+.typo-sans {
+  font-family: $font-base;
+}
+
+.typo-serif {
+  font-family: $font-serif;
+}

@@ -16,8 +16,15 @@
 }
 
 .item {
-  border: 3px solid rgba($color-green-dark, .3);
   border-radius: $border-radius-medium;
+  
+  &.theme-light {
+    border: 3px solid rgba($color-green-dark, .3);
+  }
+  
+  &.theme-dark {
+    border: 3px solid rgba($color-green-light, .3);
+  }
 }
 
 .card {
