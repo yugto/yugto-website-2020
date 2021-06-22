@@ -1,7 +1,7 @@
 @import '../../styles/imports.scss';
 
 .component {
-  @media (max-width: $breakpoint-navigation - 1px) {
+  @media screen and (max-width: $breakpoint-navigation - 1px) {
     display: none;
   }
 }

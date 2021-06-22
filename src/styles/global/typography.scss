@@ -4,11 +4,11 @@
   font-size: 3.2rem;
   line-height: 1.1em;
 
-  @media (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     font-size: 4rem;
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     font-size: 5rem;
   }
 }
@@ -17,11 +17,11 @@
   font-size: 2.2rem;
   line-height: 1.15em;
 
-  @media (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     font-size: 2.6rem;
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     font-size: 3rem;
   }
 }
@@ -30,7 +30,7 @@
   font-size: 1.8rem;
   @include font(regular);
 
-  @media (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     font-size: 2rem;
   }
 }
@@ -40,7 +40,7 @@
   @include font(regular);
   line-height: 1.4em;
 
-  @media (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     font-size: 1.6rem;
   }
 }
@@ -85,4 +85,13 @@
 .typo-pink {
   color: $color-pink-light;
   @include font-smoothing(true);
+}
+
+// ========================== type
+.typo-sans {
+  font-family: $font-base;
+}
+
+.typo-serif {
+  font-family: $font-serif;
 }

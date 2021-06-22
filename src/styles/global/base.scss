@@ -18,7 +18,7 @@ body {
   line-height: 1.4em;
   color: $color-green-dark;
 
-  @media (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     font-size: 2rem;
   }
 }
@@ -29,7 +29,7 @@ body {
   @include font(regular);
   box-sizing: border-box;
   
-  background-color: rgba($color-pink-light, .6);
+  background-color: $color-pink-light;
 }
 
 #sapper {
@@ -37,10 +37,6 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   flex-direction: column;
-}
-
-main {
-  // flex-grow: 2;
 }
 
 a {

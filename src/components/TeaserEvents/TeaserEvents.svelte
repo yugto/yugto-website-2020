@@ -2,6 +2,7 @@
   import { getContext } from 'svelte'
   import EventsList from '../EventsList/EventsList.svelte'
   import Button from '../Button/Button.svelte'
+  import DiscoSprinkles from '../DiscoSprinkles/DiscoSprinkles.svelte'
 
   let context = getContext('context')
   const { 
@@ -15,7 +16,7 @@
     @import 'components/TeaserEvents/teaserEvents.scss';
 </style>
 
-<article class="component">
+<article class="component typo-pink">
   <header class="header stack section container">
     {#if eventsTitle}
       <h2 class="typo-xlarge">{eventsTitle}</h2>
@@ -26,9 +27,11 @@
     {/if}
   </header>
 
-  <EventsList events={events} />
+  <EventsList events={events} theme="dark" />
 
   <section class="actions stack">
-    <Button url="/events" prefetch theme="green">All events</Button>
+    <Button url="/events" prefetch theme="pink">All events</Button>
   </section>
+
+  <DiscoSprinkles className="sprinkles"/>
 </article>

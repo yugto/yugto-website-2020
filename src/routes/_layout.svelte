@@ -30,19 +30,25 @@
 </script>
 
 <script>
-	import { setContext } from 'svelte'
+	import { setContext, onMount } from 'svelte'
 	import { writable } from 'svelte/store'
 	import PreloadAssets from '../components/PreloadAssets/PreloadAssets.svelte';
 	import Header from '../components/Header/Header.svelte';
+	import Main from '../components/Main/Main.svelte';
 	import Footer from '../components/Footer/Footer.svelte';
 
 	export let segment
 	export let app
+	let reducedMotion = false
 
-	let context = writable({ segment, app } );
+	let context = writable({ segment, app, reducedMotion } );
 	setContext('context', context);
 
-	$: $context = { segment, app }
+	$: $context = { segment, app, reducedMotion }
+
+	onMount(() => {
+		$context.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+	})
 </script>
 
 <style lang="scss" global>
@@ -51,7 +57,7 @@
 
 <PreloadAssets/>
 <Header />
-<main>
+<Main segment={segment}>
 	<slot></slot>
-</main>
+</Main>
 <Footer />

@@ -1,0 +1,43 @@
+.root {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.st0 {
+  fill:none;
+  stroke:#FECD31;
+  stroke-width: 2;
+}
+
+.st1 {
+  fill:none;
+  stroke:#52C4C0;
+  stroke-width: 2;
+}
+
+.st2 {
+  fill:none;
+  stroke:#FF7171;
+  stroke-width: 2;
+}
+
+.st3 {
+  fill:#FFFFFF;
+}
+
+.st4 {
+  fill:#52C4C0;
+}
+
+.st5 {
+  fill:#F6CEBF;
+}
+
+.st6 {
+  fill:#FF7171;
+}
+
+.root:not(.isReducedMotion) rect {
+  transform: scale(0);
+}

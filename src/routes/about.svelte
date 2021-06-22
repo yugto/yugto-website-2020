@@ -1,12 +1,19 @@
 <script context="module">
 	import { seoFragment } from '../graphql/fragments.js'
+	import { imageFields } from '../graphql/fields.js'
 	import datoRequest from '../lib/dato-request.js'
 	
 	const query = `
-			query Home {
+			query About {
 				about {
 					title
 					${seoFragment}
+					intro
+					images {
+						${imageFields}
+					}
+					body
+					outro
 				}
 			}
 			`
@@ -20,10 +27,12 @@
 
 <script>
 	import SeoHead from '../components/SeoHead/SeoHead.svelte'
+	import About from '../components/About/About.svelte'
 
 	export let page
 </script>
 
 <SeoHead title={ page.title } seo={ page.seo } />
+<About {...page} />
 
-<h1>{page.title}</h1>
+
