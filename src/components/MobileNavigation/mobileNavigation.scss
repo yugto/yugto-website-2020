@@ -64,6 +64,13 @@
   
   background-color: $color-yellow;
   border-radius: 50%;
+
+  box-shadow: 0 0 0 0 $color-yellow;
+  transition: box-shadow .1s;
+
+  &:hover {
+    box-shadow: 0 0 0 3px $color-yellow;
+  }
 }
 
 .cheese,
