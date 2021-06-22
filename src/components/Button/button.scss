@@ -8,6 +8,7 @@
 
   color: $color-green-dark;
   border-radius: $border-radius-small;
+  transition: box-shadow .1s;
 }
 
 .level-primary {
@@ -24,25 +25,50 @@
 
 .theme-yellow {
   background-color: $color-yellow;
+  box-shadow: 0 0 0 0 $color-yellow;
+  
+  &:hover {
+    box-shadow: 0 0 0 3px $color-yellow;
+  }
 }
 
 .theme-pink {
   background-color: $color-pink-light;
+  box-shadow: 0 0 0 0 $color-pink-light;
+  
+  &:hover {
+    box-shadow: 0 0 0 3px $color-pink-light;
+  }
 }
 
 .theme-pink-muted {
   background-color: rgba($color-pink-light, .2);
   color: $color-pink-light;
+  box-shadow: 0 0 0 0 rgba($color-pink-light, .2);
+  
+  &:hover {
+    box-shadow: 0 0 0 3px rgba($color-pink-light, .2);
+  }
 }
 
 .theme-green {
   background-color: $color-green-dark;
   color: $color-pink-light;
+  box-shadow: 0 0 0 0 $color-green-dark;
+  
+  &:hover {
+    box-shadow: 0 0 0 3px $color-green-dark;
+  }
 }
 
 .theme-green-muted {
   background-color: rgba($color-green-dark, .2);
   color: $color-green-dark;
+  box-shadow: 0 0 0 0 rgba($color-green-dark, .2);
+  
+  &:hover {
+    box-shadow: 0 0 0 3px rgba($color-green-dark, .2);
+  }
 }
 
 .component > :global(.icon) {
