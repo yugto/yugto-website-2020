@@ -1,12 +1,9 @@
 <script>
   export let pretitle
   export let title
-  export let body
   export let image
-  export let shopLink
 
-  import Image from '../Image/Image.svelte'
-  import Button from '../Button/Button.svelte'
+  import Illustration from './Illustration.svelte'
 </script>
 
 <style lang="scss">
@@ -14,8 +11,8 @@
 </style>
 
 <article class="component section">
-  <div class="inner container">
-    <div class="typo-pink">
+  <div class="inner container container-xlarge">
+    <div class="content typo-pink">
       {#if pretitle}
         <h1 class="typo-large typo-green-light">{ pretitle }</h1>
       {/if}
@@ -23,14 +20,9 @@
       {#if title}
         <h2 class="typo-xlarge title">{title}</h2>
       {/if}
-
-      {#if body}
-        <div class="typo-medium typo-spaced body">{ @html body }</div>
-      {/if}
     </div>
     <div class="media">
-      <Image image={image}/>
-      <Button className="button" url={shopLink} theme="pink" external>Visit book store</Button>
+      <Illustration image={image} />
     </div>
   </div>
 </article>
