@@ -1,6 +1,6 @@
 <script>
-  
   import Illustration from './Illustration.svelte'
+
   export let title
   export let text
 </script>
