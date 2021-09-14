@@ -1,12 +1,17 @@
 <script context="module">
+	import { contentBlock } from '../../graphql/blocks.js'
+	import { seoFragment } from '../../graphql/fragments.js'
 	import datoRequest from '../../lib/dato-request.js'
 	
 	export async function preload({ params }, session) {
 		const query = `
 			query Post {
 				post(filter: {slug: {eq: "${params.slug}"}}) {
-					title,
-					body
+					title
+					summary
+					createdAt
+					${seoFragment}
+					${contentBlock}
 				}
 			}
 			`
@@ -17,51 +22,17 @@
 </script>
 
 <script>
-	export let post;
+	import SeoHead from '../../components/SeoHead/SeoHead.svelte'
+	import PostHero from '../../components/PostHero/PostHero.svelte'
+	import SubpageNavigation from '../../components/SubpageNavigation/SubpageNavigation.svelte'
+	import ModularContent from '../../components/ModularContent/ModularContent.svelte'
+	export let post
+
+	const {title, seo, summary, createdAt, updatedAt, instagramEmbed, content} = post
 </script>
 
-<style>
-	/*
-		By default, CSS is locally scoped to the component,
-		and any unused styles are dead-code-eliminated.
-		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
-		so we have to use the :global(...) modifier to target
-		all elements inside .content
-	*/
-	.content :global(h2) {
-		font-size: 1.4em;
-		font-weight: 500;
-	}
+<SeoHead title={ title } seo={ seo } />
 
-	.content :global(pre) {
-		background-color: #f9f9f9;
-		box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-		padding: 0.5em;
-		border-radius: 2px;
-		overflow-x: auto;
-	}
-
-	.content :global(pre) :global(code) {
-		background-color: transparent;
-		padding: 0;
-	}
-
-	.content :global(ul) {
-		line-height: 1.5;
-	}
-
-	.content :global(li) {
-		margin: 0 0 0.5em 0;
-	}
-</style>
-
-<svelte:head>
-	<title>{post.title}</title>
-</svelte:head>
-
-<h1>{post.title}</h1>
-
-<div class="content">
-	{@html post.body}
-</div>
+<PostHero {title} {summary} {createdAt} />
+<SubpageNavigation href="/blog" label="All posts"/>
+<ModularContent items={content} />

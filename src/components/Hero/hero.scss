@@ -1,0 +1,60 @@
+@import '../../styles/imports.scss'; 
+
+.component {
+  padding-top: $unit-large;
+  padding-bottom: $unit-large;
+  background-color: $color-green-dark;
+
+  @media screen and (min-width: 950px) {
+    padding-top: $unit-xlarge;
+    padding-bottom: $unit-xlarge;
+  }
+}
+
+.inner {
+  @media screen and (max-width: 949px) {
+    > * + * {
+      margin-top: $unit-medium;
+    }
+  }
+
+  @media screen and (min-width: 950px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $unit-large;
+  }
+}
+
+.content {
+  @media screen and (min-width: 950px) {
+    margin-top: $unit-large;
+  }
+}
+
+.title:not(:first-child) {
+  margin-top: $unit-xsmall;
+}
+
+.body:not(:first-child) {
+  margin-top: $unit-medium;
+}
+
+.media {
+  @media screen and (max-width: 949px) {
+    margin-top: $unit-large;
+  }
+}
+
+.media > :global(*) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (max-width: 949px) {
+    width: 500px;
+    max-width: calc(100% - #{$unit-small * 2});
+  }
+
+  @media screen and (min-width: 950px) {
+    max-width: 550px;
+  }
+}

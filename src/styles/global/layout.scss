@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: $max-width-large;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-xlarge {
+  max-width: $max-width-xlarge;
+}
+
+.container-medium {
+  max-width: $max-width-medium;
+}
+
+.container-small {
+  max-width: $max-width-small;
+}
+
+.container-xsmall {
+  max-width: $max-width-xsmall;
+}
+
+.section {
+  padding-right: $unit-small;
+  padding-left: $unit-small;
+}
+
+.stack {
+  padding-top: $unit-large;
+  padding-bottom: $unit-large;
+}
+
+.stack + .stack {
+  padding-top: 0;
+}

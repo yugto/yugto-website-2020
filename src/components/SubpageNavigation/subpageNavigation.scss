@@ -1,0 +1,28 @@
+@import '../../styles/imports.scss';
+
+.component {
+  padding-top: $unit-xsmall;
+  padding-bottom: $unit-xsmall;
+  border-bottom: 1px solid rgba($color-green-dark, .2);
+}
+
+.link {
+  display: inline-grid;
+  grid-template-columns: 18px auto;
+  align-items: center;
+  gap: $unit-xsmall;
+  
+  padding-top: .4em;
+  padding-right: .4em;
+  padding-bottom: .4em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link :global(.icon) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 10;
+}

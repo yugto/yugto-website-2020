@@ -1,0 +1,45 @@
+@import '../../styles/imports.scss'; 
+
+.component {
+  text-align: center;
+  background-color: $color-green-light;
+
+  @media screen and (max-width: 799px) {
+    padding-top: $unit-medium;
+    padding-bottom: $unit-large;
+  }
+
+  @media screen and (min-width: 800px) {
+    padding-top: $unit-large;
+    padding-bottom: $unit-xlarge;
+
+    background-image: linear-gradient($color-green-dark, $color-green-dark);
+    background-size: 100% $unit-xlarge;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+
+.media > :global(*){
+  @media screen and (max-width: 799px) {
+    max-width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.content {
+  margin-top: $unit-medium;
+
+  @media screen and (min-width: 800px) {
+    margin-top: $unit-large;
+  }
+}
+
+.body {
+  margin-top: $unit-small;
+
+  @media screen and (min-width: 800px) {
+    margin-top: $unit-medium;
+  }
+}

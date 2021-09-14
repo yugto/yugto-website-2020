@@ -1,0 +1,17 @@
+@import '../../styles/imports.scss';
+
+.component {
+  padding-top: $unit-large;
+  background-color: $color-green-dark;
+  @include font-smoothing(true);
+}
+
+.body {
+  margin-top: $unit-small;
+}
+
+.date {
+  margin-top: $unit-large;
+  padding-bottom: $unit-xsmall;
+  text-align: right;
+}

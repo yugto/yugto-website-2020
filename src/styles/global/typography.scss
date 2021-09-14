@@ -1,0 +1,97 @@
+// ========================== size
+.typo-xlarge {
+  @include font(bold);
+  font-size: 3.2rem;
+  line-height: 1.1em;
+
+  @media screen and (min-width: 800px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 5rem;
+  }
+}
+
+.typo-large {
+  font-size: 2.2rem;
+  line-height: 1.15em;
+
+  @media screen and (min-width: 800px) {
+    font-size: 2.6rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 3rem;
+  }
+}
+
+.typo-medium {
+  font-size: 1.8rem;
+  @include font(regular);
+
+  @media screen and (min-width: 800px) {
+    font-size: 2rem;
+  }
+}
+
+.typo-small {
+  font-size: 1.4rem;
+  @include font(regular);
+  line-height: 1.4em;
+
+  @media screen and (min-width: 800px) {
+    font-size: 1.6rem;
+  }
+}
+
+// ======================== weight
+.typo-regular {
+  @include font(regular);
+}
+
+.typo-semibold {
+  @include font(semibold);
+}
+
+.typo-bold {
+  @include font(bold);
+}
+
+.typo-black {
+  @include font(black);
+}
+
+// ========================== spacing
+.typo-spaced {
+  letter-spacing: .03em;
+}
+
+// ========================== color
+.typo-green {
+  color: $color-green-dark;
+}
+
+.typo-muted {
+  opacity: .7;
+  @include font-smoothing(true);
+}
+
+.typo-green-light {
+  color: $color-green-light;
+  @include font-smoothing(true);
+}
+
+.typo-pink {
+  color: $color-pink-light;
+  @include font-smoothing(true);
+}
+
+// ========================== type
+.typo-sans {
+  font-family: $font-base;
+}
+
+.typo-serif {
+  font-family: $font-serif;
+}

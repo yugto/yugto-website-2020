@@ -1,0 +1,17 @@
+@import '../../../styles/imports.scss'; 
+
+.component > :global( * + *),
+.component :global(.instagram-embed:first-child) {
+  margin-top: $unit-large;
+}
+
+.component > :global( .modular-content-title + *) {
+  margin-top: $unit-small;
+}
+
+// clear float of InstagramEmbed || Image
+.component:after {
+  content: '';
+  display: table;
+  clear: both;
+}

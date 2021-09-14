@@ -1,0 +1,84 @@
+@import '../../../styles/imports.scss'; 
+
+.component {
+  font-family: $font-serif;
+  font-size: 2.2rem;
+  line-height: 1.5em;
+  font-variation-settings: "wght" 320;
+}
+
+.component > :global(* + *) {
+  margin-top: .8em;
+}
+
+.component :global(strong) {
+  font-weight: normal;
+  font-variation-settings: "wght" 700;
+}
+
+.component :global(a) {
+  text-decoration: underline;
+  color: $color-green-dark;
+  
+  background-image: linear-gradient($color-link-background, $color-link-background);
+  background-size: 100% 0;
+  background-position: 0 95%;
+  background-repeat: no-repeat;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    background-size: 100% 100%;
+  }
+}
+
+.component :global(a[href^='https://']) {
+  @include word-wrap();
+}
+
+.component :global(ol),
+.component :global(ul) {
+  list-style: none;
+  font-variation-settings: "wght" 400;
+
+  > :global(* + *) {
+    margin-top: .4em;
+  }
+}
+
+.component :global(ol) {
+  counter-reset: ol;
+}
+
+.component :global(ol li),
+.component :global(ul li) {
+  position: relative;
+  padding-left: calc(1.5em + #{$unit-medium});
+}
+
+.component :global(ol li) {
+  counter-increment: ol;
+}
+
+.component :global(ul li:before),
+.component :global(ol li:before) {
+  position: absolute;
+}
+
+.component :global(ul li:before) {
+  content: '';
+  top: 0.7em;
+  left: $unit-medium + $unit-xsmall;
+  width: 6px;
+  height: 6px;
+  
+  background-color: $color-green-dark;
+  border-radius: 50%;
+}
+
+.component :global(ol li:before) {
+  content: counter(ol) '. ';
+  top: 0;
+  left: $unit-medium;
+}

@@ -1,0 +1,52 @@
+@import '../../styles/imports.scss';
+
+.component {
+  padding-top: $unit-large;
+  padding-bottom: $unit-medium;
+  background-color: $color-green-dark;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.social {
+  padding-right: $unit-small;
+  padding-left: $unit-small;
+}
+
+.social a {
+  display: block;
+  
+  color: $color-pink-light;
+  text-decoration: none;
+  // @include font(bold);
+}
+
+.legal {
+  margin-top: $unit-large;
+  text-align: center;
+}
+
+.legal a {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+.legal dl {
+  display: flex;
+  justify-content: center;
+  margin-top: $unit-xsmall;
+}
+
+.legal dt:not(:first-child) {
+  margin-left: $unit-small;
+}

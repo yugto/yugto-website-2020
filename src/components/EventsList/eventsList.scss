@@ -1,0 +1,64 @@
+@import '../../styles/imports.scss';
+
+.items {
+  display: grid;
+  grid-template-columns: 1;
+  gap: $unit-small;
+  list-style: none;
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.items:not(:first-child) {
+  margin-top: $unit-xsmall;
+}
+
+.item {
+  border-radius: $border-radius-medium;
+  
+  &.theme-light {
+    border: 3px solid rgba($color-green-dark, .3);
+  }
+  
+  &.theme-dark {
+    border: 3px solid rgba($color-green-light, .3);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+  padding: $unit-medium $unit-small $unit-small $unit-small;
+}
+
+.title {
+  flex-grow: 2;
+}
+
+.link {
+  display: block;
+  color: currentColor;
+
+  &:hover span:last-child {
+    text-decoration: underline;
+  }
+}
+
+.card :global(.details) {
+  margin-top: $unit-medium;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $unit-xsmall;
+  margin-top: $unit-medium;
+
+  > :global(*) {
+    min-width: max-content;
+  }
+}

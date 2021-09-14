@@ -1,0 +1,40 @@
+@import '../../styles/imports.scss';
+
+.component {
+  padding-top: $unit-large;
+  padding-bottom: $unit-medium;
+  background-color: $color-green-dark;
+}
+
+.body {
+  max-width: 700px;
+  margin-top: $unit-small;
+}
+
+.body :global(a) {
+  @include font(semibold);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+
+  &:hover {
+    background-size: 100% 0;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $unit-small;
+  align-items: center;
+  margin-top: $unit-large
+}
+
+.component :global(.details) {
+  margin-top: $unit-large;
+}
+
+.component .actions + :global(.details) {
+  margin-top: $unit-medium;
+}

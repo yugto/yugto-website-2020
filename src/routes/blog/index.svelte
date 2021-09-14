@@ -1,47 +1,64 @@
 <script context="module">
+	import {imageFields, seoFields} from '../../graphql/fields.js'
 	import datoRequest from '../../lib/dato-request.js'
-	const query = `
-			query AllPosts {
-				allPosts {
-					title
-					slug
-					body
+	const fields = `
+		slug
+		title
+		teaser
+		createdAt
+		publishDate
+		featuredImage {
+			${imageFields}
+		}
+	`
+	
+	const query_seo = `
+		query BlogSeo {
+			app {
+				blogSeo {
+					${seoFields}
 				}
 			}
-			`
+		}
+	`
+
+	const query_featured = `
+		query FeaturedPosts {
+			allPosts(filter: {featured: {eq: "true"}}, first: "6") {
+				${fields}
+			}
+		}
+	`
+
+	const query_default = `
+		query RegularPosts {
+			allPosts(filter: {featured: {eq: "false"}}) {
+				${fields}
+			}
+		}
+	`
 
 	export async function preload(page, session) {
 		const { DATO_API_TOKEN } = session
-		const { allPosts } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
-		return { posts: allPosts }
+		const { app } = await datoRequest({ query: query_seo, fetch: this.fetch, token: DATO_API_TOKEN })
+		const { allPosts: featuredPosts } = await datoRequest({ query: query_featured, fetch: this.fetch, token: DATO_API_TOKEN })
+		const { allPosts: regularPosts } = await datoRequest({ query: query_default, fetch: this.fetch, token: DATO_API_TOKEN })
+		return { seo: app.blogSeo, posts: regularPosts, featured: featuredPosts }
 	}
 </script>
 
 <script>
+	export let seo
 	export let posts
+	export let featured
+
+	import SeoHead from '../../components/SeoHead/SeoHead.svelte'
+	import BlogHero from '../../components/BlogHero/BlogHero.svelte'
+	import PostsList from '../../components/PostsList/PostsList.svelte'
 </script>
 
-<style>
-	ul {
-		margin: 0 0 1em 0;
-		line-height: 1.5;
-	}
-</style>
-
-<svelte:head>
-	<title>Blog</title>
-</svelte:head>
-
-<h1>Recent posts</h1>
-
-<ul>
-	{#if posts && posts.length}
-		{#each posts as post}
-			<!-- we're using the non-standard `rel=prefetch` attribute to
-					tell Sapper to load the data for the page as soon as
-					the user hovers over the link or taps it, instead of
-					waiting for the 'click' event -->
-			<li><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></li>
-		{/each}
-	{/if}
-</ul>
+<SeoHead title={seo.title} seo={ seo } />
+<BlogHero title="Recent posts" />
+{#if posts && posts.length && featured && featured.length }
+	<PostsList {posts} {featured} />
+{/if}

@@ -1,0 +1,26 @@
+// paths
+$path-to-font: '../fonts';
+
+// =============================== sans
+@font-face {
+  font-family: "Syne";
+  src: url("#{$path-to-font}/Syne-VariableFont_wght.woff2") format("woff2-variations"),
+       url("#{$path-to-font}/Syne-Regular.woff2") format("woff2"),
+       url("#{$path-to-font}/Syne-Regular.woff") format("woff");
+  font-weight: 400 800;
+  font-display: fallback;
+  font-style: normal;
+  // unicode-range: U+20-7E; // todo: figure out range until euro sign
+}
+
+// =============================== serif
+@font-face {
+  font-family: "Piazzolla";
+  src: url("#{$path-to-font}/Piazzolla-VariableFont_opszwght.woff2") format("woff2-variations"),
+       url("#{$path-to-font}/Piazzolla-Regular.woff2") format("woff2"),
+       url("#{$path-to-font}/Piazzolla-Regular.woff") format("woff");
+  font-weight: 100 900;
+  font-display: fallback;
+  font-style: normal;
+  // unicode-range: U+20-7E;
+}

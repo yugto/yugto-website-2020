@@ -1,0 +1,30 @@
+@import '../../styles/imports.scss';
+
+.component {
+  display: inline-block;
+  height: min-content;
+  padding: .25em .6em .15em .6em;
+
+  font-size: 1.8rem;
+  text-decoration: none;
+  @include font-smoothing(true);
+  color: $color-pink-light;
+  
+  background-color: $color-green-light;
+  border-radius: $border-radius-small;
+
+  box-shadow: 0 0 0 $color-green-light;
+  transition: box-shadow .1s;
+}
+
+.extended {
+  padding: .5em .8em .5em .8em;
+
+  font-size: 2.6rem;
+  @include font(bold);
+}
+
+.component:hover,
+.component:focus {
+  box-shadow: 0 0 0 3px $color-green-light;
+}

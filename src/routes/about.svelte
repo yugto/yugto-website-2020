@@ -1,9 +1,19 @@
 <script context="module">
+	import { seoFragment } from '../graphql/fragments.js'
+	import { imageFields } from '../graphql/fields.js'
 	import datoRequest from '../lib/dato-request.js'
+	
 	const query = `
-			query Home {
+			query About {
 				about {
 					title
+					${seoFragment}
+					intro
+					images {
+						${imageFields}
+					}
+					body
+					outro
 				}
 			}
 			`
@@ -11,18 +21,18 @@
 	export async function preload(page, session) {
 		const { DATO_API_TOKEN } = session
 		const { about } = await datoRequest({ query, fetch: this.fetch, token: DATO_API_TOKEN })
-		return { data: about }
+		return { page: about }
 	}
 </script>
 
 <script>
-	export let data
+	import SeoHead from '../components/SeoHead/SeoHead.svelte'
+	import About from '../components/About/About.svelte'
+
+	export let page
 </script>
 
-<svelte:head>
-	<title>About</title>
-</svelte:head>
+<SeoHead title={ page.title } seo={ page.seo } />
+<About {...page} />
 
-<h1>About this site || {data.title}</h1>
 
-<p>This is the 'about' page. There's not much here.</p>

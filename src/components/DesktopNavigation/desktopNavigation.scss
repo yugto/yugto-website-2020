@@ -1,0 +1,44 @@
+@import '../../styles/imports.scss';
+
+.component {
+  @media screen and (max-width: $breakpoint-navigation - 1px) {
+    display: none;
+  }
+}
+
+.items {
+  list-style: none;
+  display: flex;
+}
+
+* + .item {
+  margin-left: 1.3em;
+}
+
+.store {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: $header-height-desktop;
+
+  padding-top: .2em;
+  padding-bottom: .2em;
+
+  font-size: 2.2rem;
+  color: $color-green-light;
+  text-decoration: none;
+  @include font-smoothing(true);
+
+  transition: color .1s linear;
+}
+
+.link[aria-current],
+.link:hover,
+.link:focus {
+  color: $color-pink-light;
+}
