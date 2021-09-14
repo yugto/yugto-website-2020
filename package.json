@@ -1,9 +1,9 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "yugto",
+  "description": "website yugto 2020",
   "version": "0.0.1",
   "scripts": {
-    "dev": "sapper dev",
+    "dev": "sapper dev --port 3210",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build"

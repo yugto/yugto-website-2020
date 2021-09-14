@@ -22,11 +22,11 @@
       </li>
       <li class="social">
         <a 
-          href={$context.app.eventbrite}
+          href={$context.app.discord}
           rel='noreferrer noopener'
           target='_blank'
         >
-          eventbrite
+          Discord
         </a>
       </li>
     </ul>
@@ -36,14 +36,14 @@
         Yugto, 
         Dokstraat 41, 
         3082RK Rotterdam, 
-        <a href="mailto:yugtobookclubeuropa@gmail.com">yugtobookclubeuropa@gmail.com</a>
+        <a href="mailto:yugtoeuropa@gmail.com">yugtoeuropa@gmail.com</a>
       </p>
       <dl>
         <dt>KvK:</dt>
-        <dd>1234567</dd>
+        <dd>81 14 17 77</dd>
         
         <dt>BTW:</dt>
-        <dd>123456</dd>
+        <dd>293 395 330 B01</dd>
       </dl>
     </div>
   </div>

@@ -4,7 +4,7 @@
 			query App {
 				app {
 					store
-					eventbrite
+					discord
 					instagram
 					bookclubTitle
 					bookclubBody

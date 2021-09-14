@@ -121,11 +121,11 @@
       </li>
       <li class="social" bind:this={items[segments.length + 3]}>
         <a 
-          href={$context.app.eventbrite}
+          href={$context.app.discord}
           rel='noreferrer noopener'
           target='_blank'
         >
-          eventbrite
+          discord
         </a>
       </li>
     </ul>
