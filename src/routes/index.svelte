@@ -6,9 +6,10 @@
 				home {
 					pretitle
 					title
-					body
 					${imageFragment}
 					${seoFragment}
+					aboutTitle
+					aboutBody
 				}
 				app {
 					store
@@ -45,6 +46,7 @@
 	import TeaserEvents from '../components/TeaserEvents/TeaserEvents.svelte'
 	// import Donate from '../components/Donate/Donate.svelte'
 	import Memberships from '../components/Memberships/Memberships.svelte'
+	import AboutSection from '../components/AboutSection/AboutSection.svelte'
 
 	export let page
 	export let allMemberships
@@ -55,10 +57,14 @@
 <Hero 
 	pretitle={page.pretitle} 
 	title={page.title} 
-	body={page.body} 
 	image={page.image}
 	shopLink={page.store}
 />
+
+{#if page.aboutTitle && page.aboutBody}
+	<AboutSection title={page.aboutTitle} text={page.aboutBody}/>
+{/if}
+
 {#if events && events.length}
 	<TeaserEvents events={events} />
 {/if}
