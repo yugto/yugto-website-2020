@@ -104,9 +104,9 @@
           </a>
         </li>
       {/each}
-      <li class="item item-store" bind:this={items[segments.length + 1]}>
+      <!-- <li class="item item-store" bind:this={items[segments.length + 1]}>
         <StoreButton url={$context.app.store} extended />
-      </li>
+      </li> -->
     </ul>
 
     <ul class="socials">
@@ -131,9 +131,9 @@
     </ul>
   </div>
 
-  <div class="store">
+  <!-- <div class="store">
     <StoreButton url={$context.app.store} />
-  </div>
+  </div> -->
 
   <a href="." class="toggle" on:click={toggleHandler}>
     <span class="cheese" bind:this={cheese}/>
