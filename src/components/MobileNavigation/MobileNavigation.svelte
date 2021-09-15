@@ -104,9 +104,9 @@
           </a>
         </li>
       {/each}
-      <li class="item item-store" bind:this={items[segments.length + 1]}>
+      <!-- <li class="item item-store" bind:this={items[segments.length + 1]}>
         <StoreButton url={$context.app.store} extended />
-      </li>
+      </li> -->
     </ul>
 
     <ul class="socials">
