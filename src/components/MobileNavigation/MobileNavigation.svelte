@@ -131,9 +131,9 @@
     </ul>
   </div>
 
-  <div class="store">
+  <!-- <div class="store">
     <StoreButton url={$context.app.store} />
-  </div>
+  </div> -->
 
   <a href="." class="toggle" on:click={toggleHandler}>
     <span class="cheese" bind:this={cheese}/>
