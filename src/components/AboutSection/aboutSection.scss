@@ -21,11 +21,11 @@
 }
 
 .media > :global(*){
-  @media screen and (max-width: 799px) {
-    max-width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-  }
+  width: 40%;
+  max-width: 280px;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 0 35px rgba($color-green-dark, .5);
 }
 
 .content {
@@ -33,6 +33,7 @@
 
   @media screen and (min-width: 800px) {
     margin-top: $unit-large;
+    margin-bottom: $unit-medium;
   }
 }
 

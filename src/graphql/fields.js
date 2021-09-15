@@ -9,16 +9,20 @@ const seoFields = `
   }
 `
 
+const responsiveImageFields = `
+  width
+  height
+  alt
+  src
+  webpSrcSet
+  srcSet
+`
+
 const imageFields = `
   format
   responsiveImage {
-    width
-    height
-    alt
-    src
-    webpSrcSet
-    srcSet
+    ${responsiveImageFields}
   }
 `
 
-export { seoFields, imageFields }
+export { seoFields, imageFields, responsiveImageFields }

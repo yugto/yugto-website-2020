@@ -1,60 +1,47 @@
 @import '../../styles/imports.scss'; 
 
 .component {
-  padding-top: $unit-large;
-  padding-bottom: $unit-large;
+  padding-top: $unit-xlarge;
+  padding-bottom: $unit-xlarge;
+  
   background-color: $color-green-dark;
+  background-image: url('/design/hero-main-background.svg');
+  background-size: cover;
+  background-position: center;
 
-  @media screen and (min-width: 950px) {
-    padding-top: $unit-xlarge;
-    padding-bottom: $unit-xlarge;
+  @media screen and (min-width: 1000px) {
+    padding-top: 180px;
+    padding-bottom: 140px;
   }
 }
 
 .inner {
+  text-align: center;
+
   @media screen and (max-width: 949px) {
     > * + * {
       margin-top: $unit-medium;
     }
   }
-
-  @media screen and (min-width: 950px) {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: $unit-large;
-  }
 }
 
-.content {
-  @media screen and (min-width: 950px) {
-    margin-top: $unit-large;
-  }
-}
+.title {
+  font-size: calc(3rem + .5vw);
+  line-height: 1.1em;
 
-.title:not(:first-child) {
-  margin-top: $unit-xsmall;
+  @media screen and (min-width: 700px) {
+    font-size: calc(3rem + 2vw);
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: calc(4rem + 2vw);
+  }
+  
+  @media screen and (min-width: 1200px) {
+    font-size: 8rem;
+  }
 }
 
 .body:not(:first-child) {
   margin-top: $unit-medium;
-}
-
-.media {
-  @media screen and (max-width: 949px) {
-    margin-top: $unit-large;
-  }
-}
-
-.media > :global(*) {
-  margin-right: auto;
-  margin-left: auto;
-
-  @media screen and (max-width: 949px) {
-    width: 500px;
-    max-width: calc(100% - #{$unit-small * 2});
-  }
-
-  @media screen and (min-width: 950px) {
-    max-width: 550px;
-  }
 }
