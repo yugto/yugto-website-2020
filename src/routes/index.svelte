@@ -1,13 +1,19 @@
 <script context="module">
 	import { seoFragment, imageFragment } from '../graphql/fragments'
+	import { responsiveImageFields } from '../graphql/fields'
 	import datoRequest from '../lib/dato-request.js'
 	const query = `
 			query Home {
 				home {
-					pretitle
 					title
-					${imageFragment}
+					body
 					${seoFragment}
+					aboutImage {
+						format
+						responsiveImage(imgixParams: { w: 400, auto: format }) {
+							${responsiveImageFields}
+						}
+					}
 					aboutTitle
 					aboutBody
 				}
@@ -55,14 +61,12 @@
 
 <SeoHead title={ page.title } seo={ page.seo } />
 <Hero 
-	pretitle={page.pretitle} 
 	title={page.title} 
-	image={page.image}
-	shopLink={page.store}
+	body={page.body} 
 />
 
-{#if page.aboutTitle && page.aboutBody}
-	<AboutSection title={page.aboutTitle} text={page.aboutBody}/>
+{#if page.aboutTitle && page.aboutBody && page.aboutImage}
+	<AboutSection title={page.aboutTitle} text={page.aboutBody} image={page.aboutImage}/>
 {/if}
 
 {#if events && events.length}

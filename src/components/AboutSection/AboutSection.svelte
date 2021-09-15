@@ -1,8 +1,9 @@
 <script>
-  import Illustration from './Illustration.svelte'
+  import Image from '../Image/Image.svelte'
 
   export let title
   export let text
+  export let image
 </script>
 
 <style lang="scss">
@@ -10,8 +11,8 @@
 </style>
 
 <section class="section component">
-  <div class="media container container-xsmall">
-    <Illustration />
+  <div class="media">
+    <Image image={image} className="image"/>
   </div>
 
   <div class="content container container-small typo-pink">
