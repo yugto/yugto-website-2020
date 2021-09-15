@@ -1,7 +1,6 @@
 <script>
-  export let pretitle
   export let title
-  export let image
+  export let body
 
   import Illustration from './Illustration.svelte'
 </script>
@@ -11,20 +10,15 @@
 </style>
 
 <article class="component section">
-  <div class="inner container container-xlarge">
-    <div class="content typo-pink">
-      {#if pretitle}
-        <h1 class="typo-large typo-green-light">{ pretitle }</h1>
-      {/if}
+  <div class="inner container typo-pink">
+    {#if title}
+      <h1 class="typo-bold title">{ title }</h1>
+    {/if}
 
-      {#if title}
-        <h2 class="typo-xlarge title">{title}</h2>
-      {/if}
-    </div>
-    <div class="media">
-      <Illustration image={image} />
-    </div>
+    {#if body}
+      <div class="container container-small typo-large typo-green-light body">
+        {@html body}
+      </div>
+    {/if}
   </div>
 </article>
-
-
