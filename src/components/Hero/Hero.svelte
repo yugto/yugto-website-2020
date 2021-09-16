@@ -1,8 +1,6 @@
 <script>
   export let title
   export let body
-
-  import Illustration from './Illustration.svelte'
 </script>
 
 <style lang="scss">

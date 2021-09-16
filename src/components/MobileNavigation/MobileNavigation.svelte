@@ -125,7 +125,7 @@
           rel='noreferrer noopener'
           target='_blank'
         >
-          discord
+          Discord
         </a>
       </li>
     </ul>

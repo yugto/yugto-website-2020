@@ -24,11 +24,15 @@
 }
 
 .actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: $unit-small;
   align-items: center;
-  margin-top: $unit-large
+  justify-content: start;
+  margin-top: $unit-large;
+  
+  @media screen and (min-width: 550px) {
+    grid-template-columns: auto auto;
+  }
 }
 
 .component :global(.details) {

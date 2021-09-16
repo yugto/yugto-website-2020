@@ -10,16 +10,18 @@
     @import 'components/AboutSection/aboutSection.scss';
 </style>
 
-<section class="section component">
+<section class="component">
   <div class="media">
     <Image image={image} className="image"/>
   </div>
 
-  <div class="content container container-small typo-pink">
-    <h2 class="typo-large typo-bold">{title}</h2>
+  <div class="section">
+    <div class="content container container-small typo-pink">
+      <h2 class="typo-large typo-bold">{title}</h2>
 
-    <div class="body">
-      {@html text}
+      <div class="body">
+        {@html text}
+      </div>
     </div>
   </div>
 </section>
