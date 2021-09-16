@@ -1,5 +1,6 @@
 @import '../../styles/imports.scss';
 
+$sub-nav-icon-size: 18px;
 .component {
   padding-top: $unit-xsmall;
   padding-bottom: $unit-xsmall;
@@ -8,7 +9,7 @@
 
 .link {
   display: inline-grid;
-  grid-template-columns: 18px auto;
+  grid-template-columns: $sub-nav-icon-size auto;
   align-items: center;
   gap: $unit-xsmall;
   
@@ -22,6 +23,9 @@
 }
 
 .link :global(.icon) {
+  display: block;
+  width: $sub-nav-icon-size;
+  height: $sub-nav-icon-size;
   fill: none;
   stroke: currentColor;
   stroke-width: 10;

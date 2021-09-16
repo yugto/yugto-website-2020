@@ -32,10 +32,11 @@
 .grid {
   position: relative;
   z-index: 1;
-  padding-top: $unit-xlarge;
+  padding-top: 160px;
   padding-bottom: $unit-large;
 
   @media screen and (min-width: 950px) {
+    padding-top: $unit-xlarge;
     padding-bottom: $unit-xlarge;
   }
 }

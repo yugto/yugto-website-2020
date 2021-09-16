@@ -55,10 +55,10 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: $unit-xsmall;
   margin-top: $unit-medium;
 
   > :global(*) {
+    margin-right: $unit-xsmall;
     min-width: max-content;
   }
 }

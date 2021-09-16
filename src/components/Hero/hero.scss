@@ -1,13 +1,19 @@
 @import '../../styles/imports.scss'; 
 
 .component {
-  padding-top: $unit-xlarge;
+  padding-top: 20vw;
   padding-bottom: $unit-xlarge;
   
   background-color: $color-green-dark;
-  background-image: url('/design/hero-main-background.svg');
+  background-image: url('/design/hero-main-background--mobile.svg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 500px) {
+    padding-top: 12vw;
+    background-image: url('/design/hero-main-background--desktop.svg');
+  }
 
   @media screen and (min-width: 1000px) {
     padding-top: 180px;
