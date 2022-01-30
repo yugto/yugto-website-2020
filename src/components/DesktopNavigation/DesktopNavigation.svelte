@@ -24,8 +24,8 @@
         </a>
       </li>
     {/each}
-    <!-- <li class="item store">
+    <li class="item store">
       <StoreButton url={$context.app.store} />
-    </li> -->
+    </li>
   </ul>
 </nav>
